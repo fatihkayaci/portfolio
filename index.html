@@ -6,522 +6,7 @@
     <title>Fatih Kayacı - Software Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-        
-        :root {
-            --primary-color: #6c5ce7;
-            --secondary-color: #74b9ff;
-            --accent-color: #fd79a8;
-            --success-color: #00b894;
-            --warning-color: #fdcb6e;
-            --dark-color: #2d3436;
-            --light-color: #ddd;
-            --bg-dark: #1a1a2e;
-            --bg-light: #16213e;
-            --text-light: #e1e8ed;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-light);
-            background-color: var(--bg-dark);
-            overflow-x: hidden;
-        }
-
-        /* Animated Background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: var(--bg-dark);
-        }
-
-        .animated-bg::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--primary-color) 2px, transparent 2px);
-            background-size: 50px 50px;
-            animation: moveStars 20s linear infinite;
-            opacity: 0.3;
-        }
-
-        @keyframes moveStars {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(-50px) translateY(-50px); }
-        }
-
-        /* Navigation */
-        .navbar {
-            background: rgba(26, 26, 46, 0.95) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.8rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--text-light) !important;
-            font-weight: 500;
-            margin: 0 15px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover::after {
-            width: 100%;
-            left: 0;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideInUp 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.8;
-            animation: slideInUp 1s ease-out 0.2s both;
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            opacity: 0.7;
-            animation: slideInUp 1s ease-out 0.4s both;
-        }
-
-        .hero-buttons {
-            animation: slideInUp 1s ease-out 0.6s both;
-        }
-
-        .btn-gradient {
-            background: var(--gradient-2);
-            border: none;
-            color: white;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-gradient::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-gradient:hover::before {
-            left: 100%;
-        }
-
-        .btn-gradient:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .btn-outline-gradient {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 13px 38px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-gradient:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.3);
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            top: 20%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            bottom: 10%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 60px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* About Section */
-        .about-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .about-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .about-icon {
-            font-size: 3rem;
-            background: var(--gradient-3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-        }
-
-        /* Skills Section */
-        .skill-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .skill-card:hover::before {
-            left: 100%;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-        }
-
-        .skill-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Projects Section */
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-        }
-
-        .project-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        .project-image {
-            height: 250px;
-            background: var(--gradient-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.5s;
-        }
-
-        .project-card:hover .project-image::before {
-            transform: translateX(100%);
-        }
-
-        .project-content {
-            padding: 30px;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
-
-        .project-description {
-            margin-bottom: 20px;
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .tech-tag {
-            background: var(--gradient-3);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Contact Section */
-        .contact-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 50px;
-            text-align: center;
-        }
-
-        .contact-item {
-            margin: 30px 0;
-            font-size: 1.2rem;
-        }
-
-        .contact-item i {
-            font-size: 1.5rem;
-            margin-right: 15px;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .social-links {
-            margin-top: 40px;
-        }
-
-        .social-link {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-1);
-            color: white;
-            border-radius: 50%;
-            line-height: 60px;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            color: white;
-        }
-
-        /* Footer */
-        .footer {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        /* Animations */
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .hero-description {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .btn-gradient, .btn-outline-gradient {
-                padding: 12px 30px;
-                font-size: 1rem;
-                margin: 5px;
-            }
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: var(--gradient-1);
-            z-index: 1000;
-            transition: width 0.3s ease;
-        }
-    </style>
+    <link href="index.css" rel="stylesheet">
 </head>
 <body>
     <!-- Animated Background -->
@@ -540,21 +25,53 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#home">
+                            <span class="lang-tr">Ana Sayfa</span>
+                            <span class="lang-en hidden">Home</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#about">
+                            <span class="lang-tr">Hakkımda</span>
+                            <span class="lang-en hidden">About</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link" href="#experience">
+                            <span class="lang-tr">Deneyim</span>
+                            <span class="lang-en hidden">Experience</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#certifications">
+                            <span class="lang-tr">Sertifikalar</span>
+                            <span class="lang-en hidden">Certificates</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#skills">
+                            <span class="lang-tr">Yetenekler</span>
+                            <span class="lang-en hidden">Skills</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">
+                            <span class="lang-tr">Projeler</span>
+                            <span class="lang-en hidden">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <span class="lang-tr">İletişim</span>
+                            <span class="lang-en hidden">Contact</span>
+                        </a>
                     </li>
                 </ul>
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="tr">TR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -574,17 +91,28 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Fatih Kayacı</h1>
-                <p class="hero-subtitle">Software Developer & Computer Engineer</p>
+                <p class="hero-subtitle">
+                    <span class="lang-tr">Yazılım Geliştirici & Bilgisayar Mühendisi</span>
+                    <span class="lang-en hidden">Software Developer & Computer Engineer</span>
+                </p>
                 <p class="hero-description">
-                    Modern web teknolojileri ve clean code principles ile ölçeklenebilir 
-                    uygulamalar geliştiren tutkulu bir yazılım geliştirici
+                    <span class="lang-tr">
+                        Modern teknolojiler ve clean code prensipleri ile kullanıcı odaklı çözümler geliştiren yazılım geliştirici
+                    </span>
+                    <span class="lang-en hidden">
+                        Software developer creating user-focused solutions with modern technologies and clean code principles
+                    </span>
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-gradient">
-                        <i class="fas fa-rocket"></i> Projelerimi Gör
+                        <i class="fas fa-rocket"></i> 
+                        <span class="lang-tr">Projelerimi Gör</span>
+                        <span class="lang-en hidden">View Projects</span>
                     </a>
                     <a href="#contact" class="btn btn-outline-gradient">
-                        <i class="fas fa-envelope"></i> İletişim
+                        <i class="fas fa-envelope"></i> 
+                        <span class="lang-tr">İletişim</span>
+                        <span class="lang-en hidden">Contact</span>
                     </a>
                 </div>
             </div>
@@ -594,33 +122,169 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">
+                <span class="lang-tr">Hakkımda</span>
+                <span class="lang-en hidden">About Me</span>
+            </h2>
             <div class="row">
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-4 mb-4 d-flex">
                     <div class="about-card">
                         <div class="about-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h4>Eğitim</h4>
-                        <p>Sivas Cumhuriyet Üniversitesi Bilgisayar Mühendisliği mezunu olarak solid theoretical background'e sahibim.</p>
+                        <h4>
+                            <span class="lang-tr">Eğitim</span>
+                            <span class="lang-en hidden">Education</span>
+                        </h4>
+                        <p>
+                            <span class="lang-tr">Bilgisayar Mühendisliği mezunu</span>
+                            <span class="lang-en hidden">Computer Engineering graduate</span>
+                        </p>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-4 mb-4 d-flex">
                     <div class="about-card">
                         <div class="about-icon">
                             <i class="fas fa-briefcase"></i>
                         </div>
-                        <h4>Deneyim</h4>
-                        <p>ERP sistemleri üzerinde staj deneyimi kazandım ve çeşitli web uygulaması projelerinde çalıştım.</p>
+                        <h4>
+                            <span class="lang-tr">Deneyim</span>
+                            <span class="lang-en hidden">Experience</span>
+                        </h4>
+                        <p>
+                            <span class="lang-tr">IAS'ta stajyer yazılım geliştirici olarak ERP sistemleri ve veritabanı yönetiminde gerçek iş dünyası deneyimi kazandım.</span>
+                            <span class="lang-en hidden">Gained real-world experience as intern software developer at IAS, working on ERP systems and database management.</span>
+                        </p>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-4 mb-4 d-flex">
                     <div class="about-card">
                         <div class="about-icon">
                             <i class="fas fa-heart"></i>
                         </div>
-                        <h4>Tutku</h4>
-                        <p>Clean code, modern architecture patterns ve user experience odaklı geliştirme yaklaşımına tutkuluyum.</p>
+                        <h4>
+                            <span class="lang-tr">Misyon</span>
+                            <span class="lang-en hidden">Mission</span>
+                        </h4>
+                        <p>
+                            <span class="lang-tr">Clean code, modern architecture patterns ve user experience odaklı geliştirme yaklaşımına tutkuluyum.</span>
+                            <span class="lang-en hidden">Passionate about clean code, modern architecture patterns and user experience focused development approaches.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-tr">İş Deneyimi</span>
+                <span class="lang-en hidden">Work Experience</span>
+            </h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div class="company-logo">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="experience-info">
+                                <h4>
+                                    <span class="lang-tr">Stajyer Yazılım Geliştirici</span>
+                                    <span class="lang-en hidden">Intern Software Developer</span>
+                                </h4>
+                                <h5>IAS (Industrial Application Software)</h5>
+                                <p class="experience-date">10/2024 – 12/2024 | İstanbul</p>
+                            </div>
+                        </div>
+                        <div class="experience-details">
+                            <ul>
+                                <li>
+                                    <span class="lang-tr">Yazılım geliştirme süreçlerine katıldım ve proje ekibiyle işbirliği yaptım</span>
+                                    <span class="lang-en hidden">Participated in software development processes and collaborated with project team</span>
+                                </li>
+                                <li>
+                                    <span class="lang-tr">ERP sistemleri üzerinde çalıştım, iş süreçleri ve veritabanı yönetimi konularında deneyim kazandım</span>
+                                    <span class="lang-en hidden">Worked on ERP systems, gained experience in business processes and database management</span>
+                                </li>
+                                <li>
+                                    <span class="lang-tr">SQL ve veritabanı yönetiminde destek sağladım, performans optimizasyonuna odaklandım</span>
+                                    <span class="lang-en hidden">Provided support in SQL and database management, focused on performance optimization</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-tr">Sertifikalar</span>
+                <span class="lang-en hidden">Certifications</span>
+            </h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h5>Harvard University CS50</h5>
+                        <p class="cert-provider">EdX - 2025</p>
+                        <p>
+                            <span class="lang-tr">Algoritma, veri yapıları ve yazılım mühendisliği prensipleri. C, Python ve SQL kullanarak pratik uygulamalar.</span>
+                            <span class="lang-en hidden">Algorithms, data structures and software engineering principles. Practical applications using C, Python and SQL.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <h5>Microsoft C# Certification</h5>
+                        <p class="cert-provider">Microsoft - 2024</p>
+                        <p>
+                            <span class="lang-tr">C# programlama dili ve .NET ekosistemi. Nesne yönelimli programlama ve .NET teknolojilerinde yeterlilik.</span>
+                            <span class="lang-en hidden">C# programming language and .NET ecosystem. Proficiency in object-oriented programming and .NET technologies.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h5>SQL Excellence Bootcamp</h5>
+                        <p class="cert-provider">TechCareer - 2024</p>
+                        <p>
+                            <span class="lang-tr">İleri düzey SQL sorguları, veritabanı optimizasyonu ve performans iyileştirme teknikleri.</span>
+                            <span class="lang-en hidden">Advanced SQL queries, database optimization and performance improvement techniques.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h5>
+                            <span class="lang-tr">Ek Sertifikalar ve Eğitimler</span>
+                            <span class="lang-en hidden">Additional Certifications and Trainings</span>
+                        </h5>
+                        <p class="cert-provider">
+                            <span class="lang-tr">BTK Akademi, Turkcell Geleceğe Yazanlar ve Diğer Platformlar</span>
+                            <span class="lang-en hidden">BTK Academy, Turkcell Future Coders and Other Platforms</span>
+                        </p>
+                        <p>
+                            <span class="lang-tr">BTK Akademi, Turkcell Geleceğe Yazanlar ve diğer platformlardan alınan çok sayıda kurs ve sertifika programları.</span>
+                            <span class="lang-en hidden">Numerous courses and certification programs obtained from BTK Academy, Turkcell Future Coders and other platforms.</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -630,7 +294,10 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title">
+                <span class="lang-tr">Teknik Yetenekler</span>
+                <span class="lang-en hidden">Technical Skills</span>
+            </h2>
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="skill-card">
@@ -664,7 +331,10 @@
                         <div class="skill-icon">
                             <i class="fas fa-database"></i>
                         </div>
-                        <h5>Databases</h5>
+                        <h5>
+                            <span class="lang-tr">Veritabanları</span>
+                            <span class="lang-en hidden">Databases</span>
+                        </h5>
                         <p>MySQL, SQL Server, PostgreSQL</p>
                     </div>
                 </div>
@@ -682,8 +352,14 @@
                         <div class="skill-icon">
                             <i class="fab fa-git-alt"></i>
                         </div>
-                        <h5>Version Control</h5>
-                        <p>Git, GitHub, Collaboration</p>
+                        <h5>
+                            <span class="lang-tr">Versiyon Kontrolü</span>
+                            <span class="lang-en hidden">Version Control</span>
+                        </h5>
+                        <p>
+                            <span class="lang-tr">Git, GitHub, İş Birliği</span>
+                            <span class="lang-en hidden">Git, GitHub, Collaboration</span>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -691,8 +367,14 @@
                         <div class="skill-icon">
                             <i class="fas fa-cogs"></i>
                         </div>
-                        <h5>Architecture</h5>
-                        <p>Clean Code, Design Patterns, OOP</p>
+                        <h5>
+                            <span class="lang-tr">Mimari</span>
+                            <span class="lang-en hidden">Architecture</span>
+                        </h5>
+                        <p>
+                            <span class="lang-tr">Clean Code, Design Patterns, OOP</span>
+                            <span class="lang-en hidden">Clean Code, Design Patterns, OOP</span>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -704,6 +386,33 @@
                         <p>REST API, Microservices, PHP</p>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h5>Java</h5>
+                        <p>
+                            <span class="lang-tr">Nesne Yönelimli Programlama</span>
+                            <span class="lang-en hidden">Object-Oriented Programming</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h5>
+                            <span class="lang-tr">Diller</span>
+                            <span class="lang-en hidden">Languages</span>
+                        </h5>
+                        <p>
+                            <span class="lang-tr">Türkçe (Ana Dil), İngilizce (B1-B2)</span>
+                            <span class="lang-en hidden">Turkish (Native), English (B1-B2)</span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -711,32 +420,51 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">
+                <span class="lang-tr">Öne Çıkan Projeler</span>
+                <span class="lang-en hidden">Featured Projects</span>
+            </h2>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="project-card">
                         <div class="project-image">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-building"></i>
                         </div>
                         <div class="project-content">
-                            <h4 class="project-title">Personal Finance Tracker</h4>
+                            <h4 class="project-title">
+                                <span class="lang-tr">Katsis - Bina Yönetimi</span>
+                                <span class="lang-en hidden">Katsis - Building Management</span>
+                            </h4>
                             <p class="project-description">
-                                ASP.NET Core ile geliştirilen modern finans yönetim uygulaması. 
-                                Real-time dashboard, interactive charts ve comprehensive reporting özellikleri.
+                                <span class="lang-tr">
+                                    Ekip çalışması ile geliştirilen bina yöneticileri ve sakinler için tasarlanmış kullanıcı dostu yönetim platformu. 
+                                    Generic repository ve layered architecture ile geliştirilmiş modern web uygulaması.
+                                </span>
+                                <span class="lang-en hidden">
+                                    User-friendly management platform designed for building managers and residents, developed through team collaboration. 
+                                    Modern web application built with generic repository and layered architecture.
+                                </span>
                             </p>
                             <div class="tech-stack">
-                                <span class="tech-tag">C#</span>
-                                <span class="tech-tag">ASP.NET Core</span>
-                                <span class="tech-tag">SQL Server</span>
-                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">JavaScript</span>
                                 <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">MVC Pattern</span>
+                                <span class="tech-tag">Layered Architecture</span>
+                                <span class="tech-tag">Generic Repository</span>
+                                <span class="tech-tag">Service Pattern</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-outline-gradient me-2">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                                <a href="#" class="btn btn-gradient">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                <span class="btn btn-outline-gradient me-2" style="cursor: not-allowed; opacity: 0.6;">
+                                    <i class="fab fa-github"></i> 
+                                    <span class="lang-tr">Özel Repo</span>
+                                    <span class="lang-en hidden">Private Repo</span>
+                                </span>
+                                <a href="https://katsis.com.tr/" class="btn btn-gradient">
+                                    <i class="fas fa-external-link-alt"></i> 
+                                    <span class="lang-tr">Canlı Demo</span>
+                                    <span class="lang-en hidden">Live Demo</span>
                                 </a>
                             </div>
                         </div>
@@ -745,26 +473,38 @@
                 <div class="col-lg-6">
                     <div class="project-card">
                         <div class="project-image">
-                            <i class="fas fa-building"></i>
+                            <i class="fas fa-chart-line"></i>
                         </div>
                         <div class="project-content">
-                            <h4 class="project-title">Katsis - Building Management</h4>
+                            <h4 class="project-title">
+                                <span class="lang-tr">Kişisel Finans Takipçisi</span>
+                                <span class="lang-en hidden">Personal Finance Tracker</span>
+                            </h4>
                             <p class="project-description">
-                                Comprehensive building management system with modular architecture. 
-                                Generic components ve reusable code patterns kullanılarak geliştirildi.
+                                <span class="lang-tr">
+                                    C# ile geliştirilen modern finans yönetim uygulaması. 
+                                    Gerçek zamanlı kontrol paneli, etkileşimli grafikler ve kapsamlı raporlama özellikleri.
+                                </span>
+                                <span class="lang-en hidden">
+                                    Modern finance management application developed with C#. 
+                                    Features real-time dashboard, interactive charts and comprehensive reporting.
+                                </span>
                             </p>
                             <div class="tech-stack">
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">ASP.NET Core 9.0 MVC</span>
+                                <span class="tech-tag">Microsoft SQL</span>
                                 <span class="tech-tag">JavaScript</span>
                                 <span class="tech-tag">Bootstrap</span>
-                                <span class="tech-tag">MVC Pattern</span>
+                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">Repository Pattern</span>
+                                <span class="tech-tag">Service Layer</span>
+                                <span class="tech-tag">MVC Architecture</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-outline-gradient me-2">
+                                <a href="https://github.com/fatihkayaci/personel-finance-tracker-dotnet" class="btn btn-outline-gradient me-2">
                                     <i class="fab fa-github"></i> GitHub
                                 </a>
-                                <span class="badge bg-warning">In Development</span>
                             </div>
                         </div>
                     </div>
@@ -776,12 +516,21 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">
+                <span class="lang-tr">İletişime Geçin</span>
+                <span class="lang-en hidden">Get In Touch</span>
+            </h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-card">
-                        <h4>Let's Create Something Amazing Together!</h4>
-                        <p>Yeni projeler ve iş fırsatları hakkında konuşmak için her zaman hazırım.</p>
+                        <h4>
+                            <span class="lang-tr">Birlikte Harika Şeyler Yaratalım!</span>
+                            <span class="lang-en hidden">Let's Create Something Amazing Together!</span>
+                        </h4>
+                        <p>
+                            <span class="lang-tr">Yeni projeler ve iş fırsatları hakkında konuşmak için her zaman hazırım.</span>
+                            <span class="lang-en hidden">Always ready to discuss new projects and business opportunities.</span>
+                        </p>
                         
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -799,17 +548,11 @@
                         </div>
                         
                         <div class="social-links">
-                            <a href="#" class="social-link" target="_blank">
+                            <a href="https://www.linkedin.com/in/fatih-kayaci-79180a28a/" class="social-link" target="_blank">
                                 <i class="fab fa-linkedin"></i>
                             </a>
-                            <a href="#" class="social-link" target="_blank">
+                            <a href="https://github.com/fatihkayaci" class="social-link" target="_blank">
                                 <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="social-link" target="_blank">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-link" target="_blank">
-                                <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
@@ -821,12 +564,87 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Fatih Kayacı. Crafted with <i class="fas fa-heart" style="color: #fd79a8;"></i> and lots of <i class="fas fa-coffee" style="color: #fdcb6e;"></i></p>
+            <p>
+                &copy; 2024 Fatih Kayacı. 
+                <span class="lang-tr">❤️ ve ☕ ile hazırlandı</span>
+                <span class="lang-en hidden">Crafted with ❤️ and lots of ☕</span>
+            </p>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Language switching functionality
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const trElements = document.querySelectorAll('.lang-tr');
+        const enElements = document.querySelectorAll('.lang-en');
+        
+        // Get saved language from localStorage or default to Turkish
+        let currentLang = localStorage.getItem('selectedLanguage') || 'tr';
+        
+        // Initialize language on page load
+        function initLanguage() {
+            if (currentLang === 'en') {
+                switchToEnglish();
+            } else {
+                switchToTurkish();
+            }
+        }
+        
+        function switchToTurkish() {
+            currentLang = 'tr';
+            document.documentElement.lang = 'tr';
+            
+            // Update button states
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === 'tr') {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Show Turkish, hide English
+            trElements.forEach(el => el.classList.remove('hidden'));
+            enElements.forEach(el => el.classList.add('hidden'));
+            
+            // Save preference
+            localStorage.setItem('selectedLanguage', 'tr');
+        }
+        
+        function switchToEnglish() {
+            currentLang = 'en';
+            document.documentElement.lang = 'en';
+            
+            // Update button states
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === 'en') {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Show English, hide Turkish
+            enElements.forEach(el => el.classList.remove('hidden'));
+            trElements.forEach(el => el.classList.add('hidden'));
+            
+            // Save preference
+            localStorage.setItem('selectedLanguage', 'en');
+        }
+        
+        // Event listeners for language buttons
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (button.dataset.lang === 'tr') {
+                    switchToTurkish();
+                } else {
+                    switchToEnglish();
+                }
+            });
+        });
+        
+        // Initialize language when page loads
+        initLanguage();
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -900,10 +718,16 @@
 
         // Start typing effect when page loads
         window.addEventListener('load', function() {
-            const subtitle = document.querySelector('.hero-subtitle');
-            const originalText = subtitle.textContent;
             setTimeout(() => {
-                typeWriter(subtitle, originalText, 150);
+                const subtitle = document.querySelector('.hero-subtitle');
+                if (subtitle) {
+                    // Get the visible subtitle text based on current language
+                    const visibleSpan = subtitle.querySelector(currentLang === 'tr' ? '.lang-tr' : '.lang-en');
+                    if (visibleSpan && !visibleSpan.classList.contains('hidden')) {
+                        const originalText = visibleSpan.textContent;
+                        typeWriter(visibleSpan, originalText, 150);
+                    }
+                }
             }, 1000);
         });
 
@@ -920,13 +744,15 @@
 
         // Add glitch effect to title on hover
         const heroTitle = document.querySelector('.hero-title');
-        heroTitle.addEventListener('mouseenter', function() {
-            this.style.animation = 'glitch 0.5s ease-in-out';
-        });
+        if (heroTitle) {
+            heroTitle.addEventListener('mouseenter', function() {
+                this.style.animation = 'glitch 0.5s ease-in-out';
+            });
 
-        heroTitle.addEventListener('animationend', function() {
-            this.style.animation = 'slideInUp 1s ease-out';
-        });
+            heroTitle.addEventListener('animationend', function() {
+                this.style.animation = 'slideInUp 1s ease-out';
+            });
+        }
 
         // Add glitch keyframes to CSS
         const style = document.createElement('style');
