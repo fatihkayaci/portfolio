@@ -656,13 +656,6 @@
                     <span class="lang-en hidden">Comments</span>
                 </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number" id="totalViews">-</div>
-                <div class="stat-label">
-                    <span class="lang-tr">Görüntüleme</span>
-                    <span class="lang-en hidden">Views</span>
-                </div>
-            </div>
         </div>
 
         <!-- Setup Notice (gösterilecek eğer GitHub yapılandırması yapılmamışsa) -->
@@ -900,13 +893,10 @@
         // Stats Functions
         function updateStats() {
             const totalComments = allPosts.reduce((sum, post) => sum + post.comments, 0);
-            const totalReactions = allPosts.reduce((sum, post) => {
-                return sum + Object.values(post.reactions).reduce((a, b) => a + b, 0);
-            }, 0);
 
             document.getElementById('totalPosts').textContent = allPosts.length;
             document.getElementById('totalComments').textContent = totalComments;
-            document.getElementById('totalViews').textContent = totalReactions;
+            // totalViews satırını tamamen silin
         }
 
         // Filter Functions
@@ -1039,7 +1029,7 @@
                                 <span>${post.reactions['+1'] || 0}</span>
                             </div>
                         </div>
-                        <a href="${post.url}" target="_blank" class="read-more">
+                        <a href="blogDetay.html?id=${post.id}" class="read-more">
                             <span class="lang-tr">Devamını Oku</span>
                             <span class="lang-en hidden">Read More</span>
                             <i class="fas fa-arrow-right"></i>
