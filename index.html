@@ -67,11 +67,17 @@
                             <span class="lang-en hidden">Contact</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="EnglishWordCard/index.html">
+                            <span class="lang-tr">Kelime Kartları</span>
+                            <span class="lang-en hidden">Word Cards</span>
+                        </a>
+                    </li>
                 </ul>
                 <!-- Language Switcher -->
                 <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="tr">TR</button>
                     <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn active" data-lang="tr">TR</button>
                 </div>
             </div>
         </div>
@@ -671,7 +677,7 @@
         const enElements = document.querySelectorAll('.lang-en');
         
         // Get saved language from localStorage or default to Turkish
-        let currentLang = localStorage.getItem('selectedLanguage') || 'tr';
+        let currentLang = localStorage.getItem('selectedLanguage') || 'en';
         
         // Initialize language on page load
         function initLanguage() {

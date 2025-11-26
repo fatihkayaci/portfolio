@@ -8,17 +8,30 @@
 </head>
 <body>
     <div class="container">
-        <h1>📚 English Word Cards</h1>
+        <h1>📚 English Flashcards</h1>
         
         <div class="category-filters">
-            <button class="category-btn active" onclick="filterCategory('all')">All</button>
-            <button class="category-btn" onclick="filterCategory('animal')">🐾 Animal</button>
-            <button class="category-btn" onclick="filterCategory('food')">🍎 Food</button>
-            <button class="category-btn" onclick="filterCategory('color')">🎨 Color</button>
-            <button class="category-btn" onclick="filterCategory('number')">🔢 Number</button>
+            <select id="category-select" onchange="filterCategory(this.value)">
+                <option value="all">📚 All Categories</option>
+                <optgroup label="Word Types">
+                    <option value="profession">👔 Professions & People</option>
+                    <option value="verb">🏃 Verbs</option>
+                    <option value="adjective">📝 Adjectives</option>
+                    <option value="concept">💭 Concepts</option>
+                    <option value="adverb">⏰ Adverbs</option>
+                </optgroup>
+                <optgroup label="Adjective Categories">
+                    <option value="emotion">😊 Emotions</option>
+                    <option value="physical">💪 Physical</option>
+                    <option value="appearance">👀 Appearance</option>
+                    <option value="character">⭐ Character</option>
+                    <option value="personality">🎭 Personality</option>
+                    <option value="state">🔋 States</option>
+                </optgroup>
+            </select>
         </div>
 
-        <button class="shuffle-btn" onclick="shuffleCards()">🔀 Shuffle Card</button>
+        <button class="shuffle-btn" onclick="shuffleCards()">🔀 Shuffle Cards</button>
         
         <div class="card-container">
             <div class="card" id="card">
@@ -30,7 +43,7 @@
                 </div>
                 <div class="card-face card-back">
                     <div class="card-content">
-                        <div class="label">Türkçe</div>
+                        <div class="label">Turkish</div>
                         <div class="word" id="turkish-word">Merhaba</div>
                     </div>
                 </div>
@@ -45,7 +58,7 @@
             <button onclick="nextCard()">Next →</button>
         </div>
 
-        <div class="hint">💡 Kartı çevirmek için üzerine tıklayın</div>
+        <div class="hint">💡 Click the card to flip it</div>
     </div>
 
     <script src="index.js"></script>
