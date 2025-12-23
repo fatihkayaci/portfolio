@@ -1,0 +1,169 @@
+header { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); color: #d81b60; }
+
+.categories-nav { background: #fff0f3; border-bottom: 3px solid #ff9a9e; }
+.category-link { padding: 10px 15px; background: white; color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; border: 2px solid #e0e0e0; transition: all 0.3s; }
+.category-link:hover, .category-link.active { background: #d81b60; color: white; border-color: #d81b60; }
+
+.rule-card { background: #fff5f8; border-left: 5px solid #d81b60; }
+.rule-card h3 { color: #880e4f; }
+
+/* Duygu Skalası için Özel Stiller */
+.emotion-scale { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+.emotion-item { display: flex; align-items: center; padding: 15px; border-radius: 10px; color: white; font-weight: bold; }
+.love { background: linear-gradient(90deg, #ff4081, #ff80ab); }
+.enjoy { background: linear-gradient(90deg, #ab47bc, #ce93d8); }
+.like { background: linear-gradient(90deg, #42a5f5, #90caf9); }
+.dont-like { background: linear-gradient(90deg, #ffa726, #ffcc80); }
+.hate { background: linear-gradient(90deg, #ef5350, #ef9a9a); }
+.cant-stand { background: linear-gradient(90deg, #455a64, #78909c); }
+
+.formula-box { font-size: 1.2em; margin: 20px 0; }
+
+table { margin-top: 15px; }
+th { background: #ad1457; padding: 12px; text-align: left; }
+td { padding: 12px; border-bottom: 1px solid #eee; }
+
+
+/* Genel Düzen ve Fontlar */
+.examples-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px;
+    background-color: #f4f6f9;
+}
+
+.examples-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Grid Layout - Kartları yan yana dizer */
+.grammar-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Kart Tasarımı */
+.grammar-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #eaeaea;
+}
+
+.grammar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* Kart Başlığı */
+.group-header {
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.group-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.group-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Cümle Listeleri Genel */
+.sentence-list {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+/* Positive / Negative / Question Etiketleri */
+/* Bu kısım CSS ile otomatik başlık ekler */
+.sentence-list::before {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+/* --- Positive Bölümü --- */
+.sentence-list.positive {
+    background-color: #f9fff9; /* Çok açık yeşil arka plan */
+    border-left: 5px solid #28a745;
+}
+
+.sentence-list.positive::before {
+    content: 'Positive (+)';
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* --- Negative Bölümü --- */
+.sentence-list.negative {
+    background-color: #fff5f5; /* Çok açık kırmızı arka plan */
+    border-left: 5px solid #dc3545;
+}
+
+.sentence-list.negative::before {
+    content: 'Negative (-)';
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* --- Question Bölümü --- */
+.sentence-list.question {
+    background-color: #f5f9ff; /* Çok açık mavi arka plan */
+    border-left: 5px solid #007bff;
+    border-bottom: none; /* Son eleman olduğu için alt çizgi kalksın */
+}
+
+.sentence-list.question::before {
+    content: 'Question (?)';
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+/* Cümle Satırları */
+.row {
+    padding: 6px 0;
+    font-size: 0.95rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.row:hover .text {
+    color: #000;
+    font-weight: 500;
+}
+
+/* Özel Duygu Renkleri (Opsiyonel: Başlık alt çizgileri için) */
+.love-group .group-header { border-bottom-color: #ff4757; }
+.enjoy-group .group-header { border-bottom-color: #ffa502; }
+.like-group .group-header { border-bottom-color: #2ed573; }
+.hate-group .group-header { border-bottom-color: #5352ed; }
+.cant-stand-group .group-header { border-bottom-color: #2f3542; }
+
+/* Mobil Uyumluluk */
+@media (max-width: 600px) {
+    .grammar-layout {
+        grid-template-columns: 1fr; /* Mobilde tek sütun */
+    }
+}

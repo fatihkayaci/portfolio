@@ -1,0 +1,13 @@
+/* ===============================
+   CAN.CSS – DERS SAYFASINA ÖZEL
+   =============================== */
+
+/* Formula – ders formülleri için */
+.formula-box {
+    font-size: 1.3em;
+}
+
+/* Note – ders notu vurgusu */
+.note-box strong {
+    font-weight: 700;
+}

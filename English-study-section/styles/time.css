@@ -1,0 +1,30 @@
+/* Telling Time - Specific Styles */
+
+.clock-diagram {
+    background: #f0f8ff;
+    border: 3px solid #4CAF50;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.clock-diagram h4 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.time-rule {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffe8a1 100%);
+    border-left: 5px solid #ffc107;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.time-rule h4 {
+    color: #f57c00;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}

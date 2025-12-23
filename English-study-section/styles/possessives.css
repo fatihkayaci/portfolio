@@ -1,0 +1,11 @@
+/* Mor/Lacivert Tema */
+header { background: linear-gradient(135deg, #3f51b5 0%, #5c6bc0 100%); }
+.categories-nav { border-bottom-color: #3f51b5; }
+.category-link.active { background: #3f51b5; border-color: #3f51b5; }
+th { background: #303f9f; }
+
+.wrong { text-decoration: line-through; color: #d32f2f; opacity: 0.7; }
+.correct { color: #388e3c; font-weight: bold; }
+.my-your-group .group-header { border-bottom-color: #ff9f43; } /* Turuncu */
+.his-her-group .group-header { border-bottom-color: #54a0ff; } /* Mavi */
+.our-their-group .group-header { border-bottom-color: #5f27cd; } /* Mor */

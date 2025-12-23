@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İngilizce Öğren - Saatleri Söyleme</title>
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/time.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⏰ İngilizce Öğreniyorum</h1>
+            <p>Telling Time - Saatleri Söyleme</p>
+        </header>
+
+        <div id="navbar-placeholder"></div>
+
+        <script src="scripts/main.js"></script>
+
+        <div class="content">
+            <!-- KONU ANLATIMI BÖLÜMÜ -->
+            <div class="theory-section">
+                <h2>📖 Konu Anlatımı</h2>
+
+                <div class="rule-card">
+                    <h3>🎯 Saatleri Söyleme Mantığı</h3>
+                    <p>İngilizcede saat söylerken kullandığımız temel cümle:</p>
+                    <div class="formula-box">
+                        It is + (Time Expression)
+                    </div>
+                    <p><strong>Önemli:</strong> İngilizcede önce <span class="highlight">dakika</span>, sonra <span class="highlight">saat</span> söylenir!</p>
+                </div>
+
+                <div class="clock-diagram">
+                    <h4>🕐 Saat Kadranı Kuralları</h4>
+                    <p><strong>0-30 dakika arası:</strong> PAST (geçe) kullanılır</p>
+                    <p><strong>30-60 dakika arası:</strong> TO (kala/var) kullanılır</p>
+                    <p><strong>30. dakika:</strong> HALF PAST (buçuk) kullanılır</p>
+                    <p><strong>15. dakika:</strong> QUARTER PAST (çeyrek geçe)</p>
+                    <p><strong>45. dakika:</strong> QUARTER TO (çeyrek kala)</p>
+                </div>
+
+                <div class="rule-card">
+                    <h3>🕐 1. Full Hours (Tam Saatler) - O'CLOCK</h3>
+                    <p>Yelkovan (uzun çubuk) tam 12'nin üzerindeyse <span class="highlight">o'clock</span> kullanırız.</p>
+                    <div class="formula-box">
+                        It is + (Saat) + o'clock
+                    </div>
+                    <div class="time-rule">
+                        <h4>Örnekler:</h4>
+                        <p>
+                            • 09:00 → It is nine o'clock.<br>
+                            • 02:00 → It is two o'clock.<br>
+                            • 11:00 → It is eleven o'clock.<br>
+                            • 07:00 → It is seven o'clock.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3>🕧 2. Half Past (Buçuklar)</h3>
+                    <p>Yelkovan 6'nın üzerindeyse (30 geçiyorsa) <span class="highlight">half past</span> kalıbını kullanırız.</p>
+                    <div class="formula-box">
+                        It is + half past + (Saat)
+                    </div>
+                    <div class="note-box">
+                        <strong>⚠️ DİKKAT:</strong> Türkçede "İkiye buçuk" derken, İngilizcede "Half past two" (İkiyi buçuk geçiyor) mantığı vardır!
+                    </div>
+                    <div class="time-rule">
+                        <h4>Örnekler:</h4>
+                        <p>
+                            • 02:30 → It is half past two.<br>
+                            • 10:30 → It is half past ten.<br>
+                            • 06:30 → It is half past six.<br>
+                            • 01:30 → It is half past one.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3>🕐 3. Quarter Past / Quarter To (Çeyrekler)</h3>
+                    <p>15 dakika (Çeyrek) için özel kelimemiz <span class="highlight">Quarter</span>.</p>
+                    
+                    <h4 style="color: #2e7d32; margin-top: 20px;">A) Quarter Past (Çeyrek Geçe - 15 geçe)</h4>
+                    <div class="formula-box">
+                        It is + quarter past + (Saat)
+                    </div>
+                    <div class="time-rule">
+                        <h4>Örnekler:</h4>
+                        <p>
+                            • 10:15 → It is quarter past ten.<br>
+                            • 04:15 → It is quarter past four.<br>
+                            • 07:15 → It is quarter past seven.
+                        </p>
+                    </div>
+
+                    <h4 style="color: #c62828; margin-top: 20px;">B) Quarter To (Çeyrek Kala/Var - 45 geçe)</h4>
+                    <div class="formula-box">
+                        It is + quarter to + (Gelecek Saat)
+                    </div>
+                    <div class="note-box">
+                        <strong>⚠️ ÇOK ÖNEMLİ:</strong> "TO" kullanırken bir sonraki saati söylemeyi unutma!<br>
+                        09:45 → Ona çeyrek var → quarter to TEN (9 değil!)
+                    </div>
+                    <div class="time-rule">
+                        <h4>Örnekler:</h4>
+                        <p>
+                            • 09:45 → It is quarter to ten. (Ona çeyrek var)<br>
+                            • 02:45 → It is quarter to three. (Üçe çeyrek var)<br>
+                            • 11:45 → It is quarter to twelve. (On ikiye çeyrek var)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3>⏰ 4. PAST (Geçe) - 1 ile 30 dakika arası</h3>
+                    <p>Dakika 1-29 arasındaysa <span class="highlight">PAST</span> kullanırız.</p>
+                    <div class="formula-box">
+                        It is + (Dakika) + past + (Saat)
+                    </div>
+                    <div class="time-rule">
+                        <h4>Örnekler:</h4>
+                        <p>
+                            • 08:10 → It is ten past eight.<br>
+                            • 03:05 → It is five past three.<br>
+                            • 11:20 → It is twenty past eleven.<br>
+                            • 07:25 → It is twenty-five past seven.<br>
+                            • 01:12 → It is twelve (minutes) past one.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3>⏰ 5. TO (Kala/Var) - 31 ile 59 dakika arası</h3>
+                    <p>Dakika 31-59 arasındaysa <span class="highlight">TO</span> kullanırız ve <strong>kalan dakikayı</strong> söyleriz.</p>
+                    <div class="formula-box">
+                        It is + (Kalan Dakika) + to + (Gelecek Saat)
+                    </div>
+                    <div class="note-box">
+                        <strong>💡 Hesaplama:</strong> 60 - Dakika = Kalan Dakika<br>
+                        Örnek: 09:50 → 60 - 50 = 10 → Ten to ten
+                    </div>
+                    <div class="time-rule">
+                        <h4>Örnekler:</h4>
+                        <p>
+                            • 09:50 → It is ten to ten. (Ona on var)<br>
+                            • 04:55 → It is five to five. (Beşe beş var)<br>
+                            • 02:40 → It is twenty to three. (Üçe yirmi var)<br>
+                            • 07:35 → It is twenty-five to eight. (Sekize yirmi beş var)<br>
+                            • 10:35 → It is twenty-five to eleven. (On bire yirmi beş var)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3>🌅 6. AM / PM (Sabah / Akşam)</h3>
+                    <p>Dijital saatler için küçük bir not:</p>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Zaman Dilimi</th>
+                                    <th>Kısaltma</th>
+                                    <th>Açıklama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Gece yarısı - Öğle</td>
+                                    <td><strong>a.m.</strong></td>
+                                    <td>00:00 - 12:00 (Sabah)</td>
+                                </tr>
+                                <tr>
+                                    <td>Öğle - Gece yarısı</td>
+                                    <td><strong>p.m.</strong></td>
+                                    <td>12:00 - 00:00 (Öğleden sonra/Akşam)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="margin-top: 15px;">
+                        <strong>Örnekler:</strong><br>
+                        • 08:00 a.m. → Sabah sekiz<br>
+                        • 08:00 p.m. → Akşam sekiz (20:00)
+                    </p>
+                </div>
+
+                <div class="rule-card">
+                    <h3>📊 Özet Tablo</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Saat</th>
+                                    <th>İngilizce</th>
+                                    <th>Kural</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>03:00</td>
+                                    <td>It is three o'clock</td>
+                                    <td>O'CLOCK</td>
+                                </tr>
+                                <tr>
+                                    <td>03:15</td>
+                                    <td>It is quarter past three</td>
+                                    <td>QUARTER PAST</td>
+                                </tr>
+                                <tr>
+                                    <td>03:30</td>
+                                    <td>It is half past three</td>
+                                    <td>HALF PAST</td>
+                                </tr>
+                                <tr>
+                                    <td>03:45</td>
+                                    <td>It is quarter to four</td>
+                                    <td>QUARTER TO</td>
+                                </tr>
+                                <tr>
+                                    <td>03:10</td>
+                                    <td>It is ten past three</td>
+                                    <td>PAST</td>
+                                </tr>
+                                <tr>
+                                    <td>03:50</td>
+                                    <td>It is ten to four</td>
+                                    <td>TO</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ÖRNEKLER BÖLÜMÜ -->
+            <div class="examples-section">
+                <h2>✍️ Örnek Cümleler</h2>
+                
+                <div class="grammar-layout">
+                    
+                    <div class="grammar-card positive-group">
+                        <div class="group-header">
+                            <span class="group-icon">🕛</span>
+                            <h3>Full hours (Tam saatler)</h3>
+                        </div>
+                        <div class="sentence-list">
+                            <div class="row"><span class="text"><strong>09:00</strong> → It is nine o'clock.</span></div>
+                            <div class="row"><span class="text"><strong>02:00</strong> → It is two o'clock.</span></div>
+                            <div class="row"><span class="text"><strong>11:00</strong> → It is eleven o'clock.</span></div>
+                            <div class="row"><span class="text"><strong>03:00</strong> → It is three o'clock.</span></div>
+                            <div class="row"><span class="text"><strong>04:00</strong> → It is four o'clock.</span></div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card negative-group">
+                        <div class="group-header">
+                            <span class="group-icon">🕠</span>
+                            <h3>Half hours (Yarım saatler)</h3>
+                        </div>
+                        <div class="sentence-list">
+                            <div class="row"><span class="text"><strong>02:30</strong> → It is half past two.</span></div>
+                            <div class="row"><span class="text"><strong>10:30</strong> → It is half past ten.</span></div>
+                            <div class="row"><span class="text"><strong>05:30</strong> → It is half past five.</span></div>
+                            <div class="row"><span class="text"><strong>01:30</strong> → It is half past one.</span></div>
+                            <div class="row"><span class="text"><strong>12:30</strong> → It is half past twelve.</span></div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card question-group">
+                        <div class="group-header">
+                            <span class="group-icon">🕒</span>
+                            <h3>Quarter Past (Çeyrek geçe)</h3>
+                        </div>
+                        <div class="sentence-list">
+                            <div class="row"><span class="text"><strong>02:15</strong> → It is quarter past two.</span></div>
+                            <div class="row"><span class="text"><strong>10:15</strong> → It is quarter past ten.</span></div>
+                            <div class="row"><span class="text"><strong>05:15</strong> → It is quarter past five.</span></div>
+                            <div class="row"><span class="text"><strong>01:15</strong> → It is quarter past one.</span></div>
+                            <div class="row"><span class="text"><strong>12:15</strong> → It is quarter past twelve.</span></div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card question-group">
+                        <div class="group-header">
+                            <span class="group-icon">🕘</span>
+                            <h3>Quarter To (Çeyrek Kala)</h3>
+                        </div>
+                        <div class="sentence-list">
+                            <div class="row"><span class="text"><strong>02:45</strong> → It is quarter to three.</span></div>
+                            <div class="row"><span class="text"><strong>10:45</strong> → It is quarter to eleven.</span></div>
+                            <div class="row"><span class="text"><strong>05:45</strong> → It is quarter to six.</span></div>
+                            <div class="row"><span class="text"><strong>01:45</strong> → It is quarter to two.</span></div>
+                            <div class="row"><span class="text"><strong>12:45</strong> → It is quarter to one.</span></div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card question-group">
+                        <div class="group-header">
+                            <span class="group-icon">➡️</span>
+                            <h3>past (geçe)</h3>
+                        </div>
+                        <div class="sentence-list">
+                            <div class="row"><span class="text"><strong>02:12</strong> → It is twelve past two.</span></div>
+                            <div class="row"><span class="text"><strong>09:26</strong> → It is twenty-six past nine.</span></div>
+                            <div class="row"><span class="text"><strong>04:03</strong> → It is three past four.</span></div>
+                            <div class="row"><span class="text"><strong>11:20</strong> → It is twenty past eleven.</span></div>
+                            <div class="row"><span class="text"><strong>21:16</strong> → It is sixteen past nine.</span></div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-card question-group">
+                        <div class="group-header">
+                            <span class="group-icon">⬅️</span>
+                            <h3>To (Kala)</h3>
+                        </div>
+                        <div class="sentence-list">
+                            <div class="row"><span class="text"><strong>03:36</strong> → It is twenty-four to four.</span></div>
+                            <div class="row"><span class="text"><strong>10:48</strong> → It is twelve to eleven.</span></div>
+                            <div class="row"><span class="text"><strong>05:33</strong> → It is twenty-seven to six.</span></div>
+                            <div class="row"><span class="text"><strong>01:58</strong> → It is two to two.</span></div>
+                            <div class="row"><span class="text"><strong>12:44</strong> → It is sixteen to one.</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,388 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Categories Navigation */
+.categories-nav {
+    background: #f8f9fa;
+    border-bottom: 3px solid #667eea;
+    padding: 15px;
+}
+
+.categories-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.category-link {
+    padding: 12px 20px;
+    background: white;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-link:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-link.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+/* Content */
+.content {
+    padding: 40px;
+}
+
+/* Theory Section */
+.theory-section {
+    margin-bottom: 40px;
+}
+
+.theory-section h2 {
+    color: #667eea;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+
+/* Rule Cards */
+.rule-card {
+    background: #f8f9ff;
+    border-left: 5px solid #667eea;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.rule-card:hover {
+    transform: translateX(5px);
+}
+
+.rule-card h3 {
+    color: #764ba2;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.rule-card h4 {
+    color: #2e7d32;
+    font-size: 1.3em;
+    margin: 20px 0 10px 0;
+}
+
+.rule-card p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+.rule-card .highlight {
+    background: #fff3cd;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #856404;
+}
+
+/* Formula Box */
+.formula-box {
+    background: #e7f3ff;
+    border: 2px solid #2196F3;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #1976D2;
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background: #667eea;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05em;
+}
+
+tr:hover {
+    background: #f8f9ff;
+}
+
+/* Emoji */
+.emoji {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+/* Examples Section */
+.examples-section {
+    background: #fff9e6;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px dashed #ffc107;
+}
+
+.examples-section h2 {
+    color: #ff6b6b;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.examples-placeholder {
+    background: white;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    color: #999;
+    font-size: 1.2em;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Note Box */
+.note-box {
+    background: #fff4e6;
+    border-left: 5px solid #ff9800;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.note-box strong {
+    color: #e65100;
+}
+
+.examples-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+.examples-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Kartların Düzeni (Grid Layout) */
+.grammar-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Kart Genel Tasarımı */
+.grammar-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.grammar-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Grup Başlıkları */
+.group-header {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.group-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.group-icon {
+    font-size: 1.5rem;
+}
+
+/* --- TEMA RENKLERİ --- */
+
+/* Olumlu (Positive) - Yeşil Tema */
+.positive-group {
+    border-top: 5px solid #2ecc71;
+}
+.positive-group .group-header {
+    background-color: #f0fdf4;
+    color: #15803d;
+}
+
+/* Olumsuz (Negative) - Kırmızı Tema */
+.negative-group {
+    border-top: 5px solid #e74c3c;
+}
+.negative-group .group-header {
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+/* Soru (Question) - Mavi Tema */
+.question-group {
+    border-top: 5px solid #3498db;
+}
+.question-group .group-header {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+}
+
+/* --- LİSTE VE SATIRLAR --- */
+
+.sentence-list {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.row:hover {
+    background-color: #f8f9fa;
+}
+
+.text {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.4;
+}
+
+/* --- ETİKETLER (BADGES) --- */
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    margin-right: 12px;
+    min-width: 55px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Badge Renkleri */
+.badge.this { background-color: #8e44ad; } /* Mor */
+.badge.that { background-color: #e67e22; } /* Turuncu */
+.badge.these { background-color: #16a085; } /* Koyu Yeşil/Turkuaz */
+.badge.those { background-color: #c0392b; } /* Koyu Kırmızı */
+
+/* --- DİĞER DETAYLAR --- */
+
+/* Olumsuzluk Eki Vurgusu */
+.not {
+    color: #e74c3c;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+/* Ayırıcı Çizgi */
+.divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 15px 0;
+    width: 100%;
+}

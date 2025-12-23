@@ -1,0 +1,44 @@
+/* Bu konuya özel renkler (Yeşil/Mavi Tema) */
+header { background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); }
+.categories-nav { border-bottom-color: #009688; }
+.category-link.active { background: #009688; border-color: #009688; }
+th { background: #00796b; }
+
+.prep-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-right: 5px;
+}
+.bg-in { background-color: #ef5350; } /* Kırmızı */
+.bg-on { background-color: #ffa726; } /* Turuncu */
+.bg-at { background-color: #42a5f5; } /* Mavi */
+/* Kartın genel yapısı (Eğer sende yoksa ekleyebilirsin) */
+.image-card {
+    background: white;
+    padding: 15px; /* Fotoğrafın etrafında biraz boşluk */
+    border-radius: 12px; /* Kartın köşelerini yuvarla */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Hafif gölge */
+    border: 1px solid #eee;
+    max-width: 100%; /* Mobilde taşmasın */
+    overflow: hidden; /* İçerik taşarsa gizle */
+}
+
+/* İçindeki fotoğrafın ayarları */
+.card-image {
+    width: 100%; /* Fotoğrafı kartın genişliğine yay */
+    height: auto; /* Fotoğrafın orantısını bozma */
+    display: block; /* Fotoğrafların altındaki varsayılan küçük boşluğu kaldırır */
+    border-radius: 8px; /* Fotoğrafın kendi köşelerini de hafif yuvarla */
+}
+
+/* (Opsiyonel) Eğer fotoğraf altına yazı eklersen onun stili */
+.image-caption {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}

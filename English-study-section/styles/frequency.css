@@ -1,0 +1,56 @@
+/* Frequency Adverbs - Specific Styles */
+
+.frequency-scale {
+    background: linear-gradient(to right, #4caf50, #ffeb3b, #ff9800, #f44336);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.frequency-scale h4 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.position-rule {
+    background: #e8f5e9;
+    border: 3px solid #4caf50;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.position-rule h4 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.warning-box {
+    background: #ffebee;
+    border: 3px solid #f44336;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.warning-box strong {
+    color: #c62828;
+    font-size: 1.2em;
+}
+
+.adverb-card {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    border-left: 5px solid #9c27b0;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.adverb-card strong {
+    color: #6a1b9a;
+    font-size: 1.2em;
+}
