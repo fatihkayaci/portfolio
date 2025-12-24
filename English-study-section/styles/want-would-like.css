@@ -1,3 +1,4 @@
+/* Desktop - Yan Yana (Eski Stil) */
 .comparison-box {
     display: flex;
     gap: 20px;
@@ -10,9 +11,91 @@
     border-radius: 10px;
 }
 
+.comparison-item h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* Mobil - Alt Alta (Yeni Stil) */
+.comparison-box-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.comparison-item-vertical {
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comparison-item-vertical:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.comparison-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.comparison-header .icon {
+    font-size: 1.8em;
+}
+
+.comparison-header h4 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.comparison-content {
+    padding: 20px;
+    background: #fff;
+}
+
+.info-row {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-row.note {
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+.info-row .label {
+    font-weight: 600;
+    min-width: 100px;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.info-row .value {
+    color: #333;
+    flex: 1;
+}
+
 .want-box {
     background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
     border: 3px solid #ff9800;
+}
+
+.want-box .comparison-header {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
 }
 
 .would-like-box {
@@ -20,9 +103,77 @@
     border: 3px solid #4caf50;
 }
 
-.comparison-item h4 {
-    font-size: 1.3em;
-    margin-bottom: 10px;
+.would-like-box .comparison-header {
+    background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+}
+
+/* Desktop için eski stili geri getir */
+@media (min-width: 769px) {
+    .comparison-box-vertical {
+        display: flex;
+        gap: 20px;
+        margin: 20px 0;
+        flex-direction: row;
+    }
+
+    .comparison-item-vertical {
+        flex: 1;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+
+    .comparison-item-vertical:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .comparison-header {
+        padding: 0;
+        background: none !important;
+        margin-bottom: 10px;
+    }
+
+    .comparison-header .icon {
+        display: inline;
+        font-size: 1em;
+    }
+
+    .comparison-header h4 {
+        display: inline;
+        font-size: 1.3em;
+        color: inherit;
+    }
+
+    .comparison-content {
+        padding: 0;
+        background: none;
+    }
+
+    .info-row {
+        display: block;
+        padding: 0;
+        border: none;
+        margin-bottom: 5px;
+    }
+
+    .info-row.note {
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: none;
+    }
+
+    .info-row .label {
+        font-weight: bold;
+        min-width: auto;
+        color: inherit;
+        display: inline;
+    }
+
+    .info-row .value {
+        color: inherit;
+        display: inline;
+    }
 }
 
 .dialog-box {
@@ -49,4 +200,63 @@
     color: #1565c0;
     font-size: 1.3em;
     margin-bottom: 10px;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
 }
