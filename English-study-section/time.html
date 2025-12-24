@@ -10,6 +10,11 @@
     
 </head>
 <body>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Yukarı Çık">
+        ↑
+    </button>
+
     <div class="container">
         <header>
             <h1>⏰ İngilizce Öğreniyorum</h1>
@@ -45,7 +50,6 @@
 
                 <div class="rule-card">
                     <h3>🕐 1. Full Hours (Tam Saatler) - O'CLOCK</h3>
-                    <p>Yelkovan (uzun çubuk) tam 12'nin üzerindeyse <span class="highlight">o'clock</span> kullanırız.</p>
                     <div class="formula-box">
                         It is + (Saat) + o'clock
                     </div>
@@ -62,12 +66,8 @@
 
                 <div class="rule-card">
                     <h3>🕧 2. Half Past (Buçuklar)</h3>
-                    <p>Yelkovan 6'nın üzerindeyse (30 geçiyorsa) <span class="highlight">half past</span> kalıbını kullanırız.</p>
                     <div class="formula-box">
                         It is + half past + (Saat)
-                    </div>
-                    <div class="note-box">
-                        <strong>⚠️ DİKKAT:</strong> Türkçede "İkiye buçuk" derken, İngilizcede "Half past two" (İkiyi buçuk geçiyor) mantığı vardır!
                     </div>
                     <div class="time-rule">
                         <h4>Örnekler:</h4>
@@ -138,10 +138,6 @@
                     <p>Dakika 31-59 arasındaysa <span class="highlight">TO</span> kullanırız ve <strong>kalan dakikayı</strong> söyleriz.</p>
                     <div class="formula-box">
                         It is + (Kalan Dakika) + to + (Gelecek Saat)
-                    </div>
-                    <div class="note-box">
-                        <strong>💡 Hesaplama:</strong> 60 - Dakika = Kalan Dakika<br>
-                        Örnek: 09:50 → 60 - 50 = 10 → Ten to ten
                     </div>
                     <div class="time-rule">
                         <h4>Örnekler:</h4>
@@ -330,5 +326,38 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add fade-in animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
 </body>
 </html>

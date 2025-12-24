@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="styles/present-simple.css">
 </head>
 <body>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Yukarı Çık">
+        ↑
+    </button>
+
     <div class="container">
         <header>
             <h1>📝 İngilizce Öğreniyorum</h1>
@@ -26,7 +31,6 @@
 
                 <div class="rule-card">
                     <h3>🎯 Present Simple Ne Zaman Kullanılır?</h3>
-                    <p>Present Simple (Geniş Zaman), <span class="highlight">alışkanlıklar</span>, <span class="highlight">genel gerçekler</span> ve <span class="highlight">rutin işler</span> için kullanılır.</p>
                     <p style="margin-top: 15px;">
                         <strong>Kullanım Alanları:</strong><br>
                         ✅ Alışkanlıklar: I drink coffee every morning. (Her sabah kahve içerim.)<br>
@@ -158,8 +162,10 @@
 
                     <p style="margin-top: 20px;">
                         <strong>Kısa Cevaplar:</strong><br>
-                        • Yes, I/you/we/they <strong>do</strong>. / No, I/you/we/they <strong>don't</strong>.<br>
-                        • Yes, he/she/it <strong>does</strong>. / No, he/she/it <strong>doesn't</strong>.
+                        • Yes, I/you/we/they <strong>do</strong>.<br>
+                        No, I/you/we/they <strong>don't</strong>.<br>
+                        • Yes, he/she/it <strong>does</strong>. <br>
+                        No, he/she/it <strong>doesn't</strong>.
                     </p>
                 </div>
 
@@ -305,5 +311,38 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add fade-in animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
 </body>
 </html>

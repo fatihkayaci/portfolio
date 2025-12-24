@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="styles/can.css">
 </head>
 <body>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Yukarı Çık">
+        ↑
+    </button>
+
     <div class="container">
         <header>
             <h1>💪 İngilizce Öğreniyorum</h1>
@@ -29,18 +34,6 @@
                     <p><span class="highlight">Can</span>, bir yardımcı fiildir (Modal Verb). İki ana anlamı vardır:</p>
                     <p><strong>1. Yetenek/Beceri:</strong> Yapabilmek, bir şeyi yapmayı bilmek<br>
                     <strong>2. İzin:</strong> Bir şeyi yapma izni olmak</p>
-                </div>
-
-                <div class="rule-card">
-                    <h3>💡 Önemli Kurallar</h3>
-                    <p>
-                        ✅ Can'den sonra fiil <span class="highlight">YALIN</span> gelir (to takısı olmaz)<br>
-                        ✅ Can, <span class="highlight">tüm öznelerle</span> aynı kalır (I can, He can, They can)<br>
-                        ✅ Can'e <span class="highlight">-s takısı GELMEZ</span> (He cans ❌ YANLIŞ)<br>
-                        ✅ Can'den sonra gelen fiile <span class="highlight">-ing GELMEZ</span><br>
-                        ✅ Olumsuz: <span class="highlight">Can't / Cannot</span><br>
-                        ✅ Soru: <span class="highlight">Can</span> başa gelir
-                    </p>
                 </div>
 
                 <div class="rule-card">
@@ -78,38 +71,6 @@
                     <div class="note-box">
                         <strong>⚠️ DİKKAT:</strong> Can ile izin istemek için de kullanılır:<br>
                         Can I open the window? (Pencereyi açabilir miyim? - İzin)
-                    </div>
-                </div>
-
-                <div class="rule-card">
-                    <h3>🔄 Can ile Can't Karşılaştırması</h3>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Olumlu (Can)</th>
-                                    <th>Olumsuz (Can't)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>I can swim.</td>
-                                    <td>I can't swim.</td>
-                                </tr>
-                                <tr>
-                                    <td>She can dance.</td>
-                                    <td>She can't dance.</td>
-                                </tr>
-                                <tr>
-                                    <td>They can speak English.</td>
-                                    <td>They can't speak English.</td>
-                                </tr>
-                                <tr>
-                                    <td>A bird can fly.</td>
-                                    <td>A fish can't walk.</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
 
@@ -180,5 +141,38 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add fade-in animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
 </body>
 </html>
