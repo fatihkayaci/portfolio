@@ -97,10 +97,10 @@
                 </p>
                 <p class="hero-description">
                     <span class="lang-tr">
-                        Clean Architecture ve Domain-Driven Design (DDD) prensipleriyle ölçeklenebilir, modern ve güvenli web uygulamaları geliştiriyorum.
+                        Clean Architecture ve CQRS prensipleriyle production'a hazır, ölçeklenebilir .NET uygulamaları geliştiriyorum.
                     </span>
                     <span class="lang-en hidden">
-                        Building scalable, modern, and secure web applications applying Clean Architecture and Domain-Driven Design (DDD) principles.
+                        Building production-ready, scalable .NET applications with Clean Architecture and CQRS principles.
                     </span>
                 </p>
                 <div class="hero-buttons">
@@ -152,8 +152,8 @@
                             <span class="lang-en hidden">Experience</span>
                         </h4>
                         <p>
-                            <span class="lang-tr">ERP sistemlerinde enterprise yazılım geliştirme deneyimi kazandım. SQL optimizasyonu, veritabanı tasarımı ve Agile metodolojilerle proje yönetimi süreçlerine katıldım.</span>
-                            <span class="lang-en hidden">Gained enterprise software development experience in ERP systems. Participated in SQL optimization, database design and Agile project management processes.</span>
+                            <span class="lang-tr">ERP sistemlerinde staj yaparak kurumsal yazılım geliştirme süreçlerini deneyimledim. C# ve .NET odaklı backend geliştirme üzerine yoğunlaşarak Clean Architecture ve CQRS gibi modern mimari prensipleri kendi projelerimde uyguluyorum.</span>
+                            <span class="lang-en hidden">Gained hands-on experience in enterprise software development through an internship in ERP systems. Focused on C# and .NET backend development, applying modern architectural patterns like Clean Architecture and CQRS in personal projects.</span>
                         </p>
                     </div>
                 </div>
@@ -329,19 +329,19 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="skill-card">
                         <div class="skill-icon">
-                            <i class="fab fa-python"></i>
+                            <i class="fab fa-microsoft"></i>
                         </div>
-                        <h5>Python</h5>
-                        <p>Django, Flask, Data Analysis</p>
+                        <h5>C# / .NET</h5>
+                        <p>ASP.NET Core 9, Web API, Entity Framework Core</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="skill-card">
                         <div class="skill-icon">
-                            <i class="fab fa-microsoft"></i>
+                            <i class="fab fa-python"></i>
                         </div>
-                        <h5>C# / .NET</h5>
-                        <p>ASP.NET Core, Web API, Entity Framework</p>
+                        <h5>Python</h5>
+                        <p>Django, Flask, Data Analysis</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -371,7 +371,7 @@
                             <i class="fab fa-react"></i>
                         </div>
                         <h5>Frontend</h5>
-                        <p>HTML5, CSS3, Bootstrap, Responsive Design</p>
+                        <p>React 19, TypeScript, Tailwind CSS, Vite</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -398,10 +398,7 @@
                             <span class="lang-tr">Mimari</span>
                             <span class="lang-en hidden">Architecture</span>
                         </h5>
-                        <p>
-                            <span class="lang-tr">Clean Code, Design Patterns, OOP</span>
-                            <span class="lang-en hidden">Clean Code, Design Patterns, OOP</span>
-                        </p>
+                        <p>Clean Architecture, CQRS, Repository Pattern, Unit of Work</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -409,8 +406,8 @@
                         <div class="skill-icon">
                             <i class="fas fa-server"></i>
                         </div>
-                        <h5>Backend</h5>
-                        <p>REST API, Microservices, PHP</p>
+                        <h5>DevOps</h5>
+                        <p>Docker, Docker Compose, RabbitMQ, CI/CD, GitHub Actions</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -460,29 +457,34 @@
                         </div>
                         <div class="project-content">
                             <h4 class="project-title">
-                                <span class="lang-tr">Restoran POS & Sipariş Yönetimi</span>
-                                <span class="lang-en hidden">Restaurant POS & Order Management</span>
+                                <span class="lang-tr">Restoran POS & Mutfak Ekran Sistemi</span>
+                                <span class="lang-en hidden">Restaurant POS & Kitchen Display System</span>
                             </h4>
                             <p class="project-description">
                                 <span class="lang-tr">
-                                    Clean Architecture ve Domain-Driven Design (DDD) prensipleri kullanılarak geliştirilmiş, CQRS ve Redis destekli ölçeklenebilir restoran yönetim API'si.
+                                    Clean Architecture ve CQRS (MediatR) prensipleriyle geliştirilmiş uçtan uca restoran yönetim sistemi. Garsonlar gerçek zamanlı masa ve sipariş yönetimi yaparken, mutfak siparişleri RabbitMQ üzerinden asenkron olarak alıyor. xUnit + Moq ile 15+ unit test.
                                 </span>
                                 <span class="lang-en hidden">
-                                    A scalable restaurant management API developed using Clean Architecture and Domain-Driven Design (DDD) principles, supported by CQRS and Redis.
+                                    A full-stack restaurant management system built with Clean Architecture and CQRS (MediatR). Waitstaff manage tables and orders in real time while the kitchen receives orders asynchronously via RabbitMQ. 15+ unit tests with xUnit + Moq.
                                 </span>
                             </p>
                             <div class="tech-stack">
-                                <span class="tech-tag">C# / .NET Core 9</span>
+                                <span class="tech-tag">C# / .NET 9</span>
                                 <span class="tech-tag">Clean Architecture</span>
-                                <span class="tech-tag">DDD</span>
                                 <span class="tech-tag">CQRS (MediatR)</span>
-                                <span class="tech-tag">FluentValidation</span>
-                                <span class="tech-tag">Redis</span>
-                                <span class="tech-tag">EF Core</span>
+                                <span class="tech-tag">RabbitMQ</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">EF Core 9</span>
+                                <span class="tech-tag">React 19</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Docker</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/fatihkayaci/RestaurantBill" class="btn btn-outline-gradient me-2">
+                                <a href="https://github.com/fatihkayaci/RestaurantBill" target="_blank" class="btn btn-outline-gradient me-2">
                                     <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://bill.fatihkayaci.com/" target="_blank" class="btn btn-gradient me-2">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
                                 </a>
                                 <span class="badge bg-primary">
                                     <i class="fas fa-star me-2"></i>
@@ -621,7 +623,7 @@
     <footer class="footer">
         <div class="container">
             <p>
-                &copy; 2024 Fatih Kayacı. 
+                &copy; 2025 Fatih Kayacı. 
                 <span class="lang-tr">❤️ ve ☕ ile hazırlandı</span>
                 <span class="lang-en hidden">Crafted with ❤️ and lots of ☕</span>
             </p>
