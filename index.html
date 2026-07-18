@@ -3,875 +3,657 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatih Kayacı - Software Developer</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23grad)'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='16' font-weight='bold' text-anchor='middle' fill='white'%3EFK%3C/text%3E%3C/svg%3E">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Fatih Kayacı - .NET Backend Developer</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%236366F1'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='16' font-weight='bold' text-anchor='middle' fill='white'%3EFK%3C/text%3E%3C/svg%3E">
     <link href="index.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg"></div>
-    
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" id="scrollIndicator"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">FK</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">
-                            <span class="lang-tr">Ana Sayfa</span>
-                            <span class="lang-en hidden">Home</span>
+<!-- ▸ NAV -->
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="#hero" class="brand">
+            <div class="brand-badge">FK</div>
+            <span class="brand-text">fatihkayaci</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about" class="nav-link"><span class="lang-tr">Hakkımda</span><span class="lang-en hidden">About</span></a>
+            <a href="#projects" class="nav-link"><span class="lang-tr">Projeler</span><span class="lang-en hidden">Projects</span></a>
+            <a href="#skills" class="nav-link"><span class="lang-tr">Beceriler</span><span class="lang-en hidden">Skills</span></a>
+            <a href="#experience" class="nav-link"><span class="lang-tr">Deneyim</span><span class="lang-en hidden">Experience</span></a>
+            <a href="#education" class="nav-link"><span class="lang-tr">Eğitim</span><span class="lang-en hidden">Education</span></a>
+            <a href="#blog" class="nav-link">Blog</a>
+            <a href="#contact" class="nav-link"><span class="lang-tr">İletişim</span><span class="lang-en hidden">Contact</span></a>
+        </div>
+        <button class="lang-btn" id="langBtn">EN</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
+</nav>
+
+<!-- ▸ HERO -->
+<section id="hero" class="hero-section">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-grid">
+        <div>
+            <div class="hero-greeting mono">
+                <span class="lang-tr">Merhaba, ben</span>
+                <span class="lang-en hidden">Hello, I'm</span>
+            </div>
+            <h1 class="hero-name">Fatih Kayacı</h1>
+            <div class="hero-title">Junior .NET Backend Developer</div>
+            <p class="hero-desc">
+                <span class="lang-tr">2024 mezunu Bilgisayar Mühendisi. .NET ekosisteminde Clean Architecture, mikroservis ve event-driven sistemler üzerine açık kaynak projeler geliştiriyorum.</span>
+                <span class="lang-en hidden">Computer Engineering graduate (2024). Building backend systems with .NET — Clean Architecture, microservices, and event-driven design.</span>
+            </p>
+            <div class="hero-ctas">
+                <a href="#projects" class="btn btn-primary">
+                    <span class="lang-tr">Projelere Bak</span>
+                    <span class="lang-en hidden">View Projects</span>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <span class="lang-tr">İletişime Geç</span>
+                    <span class="lang-en hidden">Get in Touch</span>
+                </a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/fatihkayaci" target="_blank" class="soc-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/fatihkayaci" target="_blank" class="soc-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                    LinkedIn
+                </a>
+                <a href="mailto:info@fatihkayaci.com" class="soc-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    <span class="lang-tr">E-posta</span>
+                    <span class="lang-en hidden">Email</span>
+                </a>
+                <a href="Fatih_Kayaci_CV_Backend_Developer_TR.pdf" download id="cvDownloadBtn" class="soc-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span class="lang-tr">CV İndir</span>
+                    <span class="lang-en hidden">Download CV</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-code">
+            <div class="code-window">
+                <div class="code-titlebar">
+                    <div class="code-dot" style="background:#FF5F57;"></div>
+                    <div class="code-dot" style="background:#FEBC2E;"></div>
+                    <div class="code-dot" style="background:#28C840;"></div>
+                    <span class="code-filename">FatihKayaci.cs</span>
+                </div>
+                <pre class="code-body"><span style="color:#4B6080;">// FatihKayaci.cs
+</span><span style="color:#818CF8;">public class</span> <span style="color:#38BDF8;">FatihKayaci</span> : <span style="color:#34D399;">IDeveloper</span>
+{
+    <span style="color:#818CF8;">public string</span> <span style="color:#CBD5E1;">Name</span> <span style="color:#334155;">=&gt;</span> <span style="color:#86EFAC;">"Fatih Kayacı"</span>;
+
+    <span style="color:#818CF8;">public string</span>[] <span style="color:#CBD5E1;">Stack</span> <span style="color:#334155;">=&gt;</span> <span style="color:#818CF8;">new</span>[]
+    {
+        <span style="color:#86EFAC;">".NET 10"</span>, <span style="color:#86EFAC;">"Clean Architecture"</span>,
+        <span style="color:#86EFAC;">"CQRS"</span>, <span style="color:#86EFAC;">"Microservices"</span>,
+        <span style="color:#86EFAC;">"RabbitMQ"</span>, <span style="color:#86EFAC;">"Redis"</span>,
+        <span style="color:#86EFAC;">"PostgreSQL"</span>, <span style="color:#86EFAC;">"Docker"</span>
+    };
+
+    <span style="color:#818CF8;">public bool</span> <span style="color:#CBD5E1;">IsAvailable</span> <span style="color:#334155;">=&gt;</span> <span style="color:#FB923C;">true</span>;
+    <span style="color:#818CF8;">public bool</span> <span style="color:#CBD5E1;">OpenToWork</span>   <span style="color:#334155;">=&gt;</span> <span style="color:#FB923C;">true</span>;
+}</pre>
+            </div>
+            <div class="hero-available">
+                <span class="live-dot"></span>
+                <span class="lang-tr">Çalışmaya açık · İstanbul &amp; remote</span>
+                <span class="lang-en hidden">Available for work · Istanbul &amp; remote</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ ABOUT -->
+<section id="about" class="section">
+    <div class="section-inner">
+        <div class="section-head reveal">
+            <div class="sec-label"><span class="lang-tr">Ben Kimim</span><span class="lang-en hidden">Who I Am</span></div>
+            <h2 class="sec-title"><span class="lang-tr">Hakkımda</span><span class="lang-en hidden">About Me</span></h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-side reveal">
+                <div class="about-photo">
+                    <img src="fatihkayaci.webp" alt="Fatih Kayacı" class="about-photo-img">
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">4+</div>
+                        <div class="stat-label"><span class="lang-tr">Açık Kaynak Proje</span><span class="lang-en hidden">Open Source Projects</span></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">2</div>
+                        <div class="stat-label"><span class="lang-tr">İş Deneyimi</span><span class="lang-en hidden">Work Experiences</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-bio">
+                <p class="reveal">
+                    <span class="lang-tr">2024'te Bilgisayar Mühendisliği'nden mezun oldum; şu anda yüksek lisans yapıyorum. Backend sistemler inşa etmek, mimari problemleri çözmek ve ölçeklenebilir yazılım geliştirmek benim için hem meslek hem de tutkudur.</span>
+                    <span class="lang-en hidden">I graduated in Computer Engineering in 2024 and am currently pursuing a master's degree. Building backend systems, solving architectural problems, and developing scalable software is both my profession and passion.</span>
+                </p>
+                <p class="reveal d1">
+                    <span class="lang-tr">.NET ekosisteminde Clean Architecture ve CQRS ile yapılandırılmış projelerde mikroservis, event-driven sistemler ve real-time özellikler üzerine yoğunlaşıyorum.</span>
+                    <span class="lang-en hidden">I focus on .NET projects structured with Clean Architecture and CQRS — specializing in microservices, event-driven systems, and real-time features.</span>
+                </p>
+                <p class="reveal d2">
+                    <span class="lang-tr">Katsis adlı bir SaaS yan projesinde co-founder olarak PHP ve Linux sunucu yönetimi deneyimi de kazandım. Temiz, bakımı kolay ve mühendislik pratiklerine uygun kod yazmak önceliğim.</span>
+                    <span class="lang-en hidden">As co-founder of Katsis (a SaaS side project), I gained PHP and Linux server management experience. Writing clean, maintainable, engineering-quality code is my priority.</span>
+                </p>
+                <div class="about-ctas reveal d3">
+                    <a href="https://github.com/fatihkayaci" target="_blank" class="btn btn-primary btn-small">GitHub ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ PROJECTS -->
+<section id="projects" class="section section-alt">
+    <div class="section-inner">
+        <div class="section-head reveal">
+            <div class="sec-label"><span class="lang-tr">Projeler</span><span class="lang-en hidden">Work</span></div>
+            <h2 class="sec-title"><span class="lang-tr">Öne Çıkan Projeler</span><span class="lang-en hidden">Featured Projects</span></h2>
+        </div>
+        <div class="projects-list">
+
+            <div class="proj-card reveal">
+                <div class="proj-top">
+                    <span class="proj-status live">
+                        <span class="lang-tr">Canlı</span>
+                        <span class="lang-en hidden">Live</span>
+                    </span>
+                    <div class="proj-links">
+                        <a href="https://katsis.com.tr" target="_blank" class="demo-btn">
+                            <span class="lang-tr">Canlı Demo</span><span class="lang-en hidden">Live Demo</span> ↗
                         </a>
+                    </div>
+                </div>
+                <h3 class="proj-name">Katsis — Bina Yönetimi SaaS</h3>
+                <p class="proj-desc">
+                    <span class="lang-tr">Üniversite arkadaşlarımla kurduğum, bina/apartman yönetimi için multi-tenant SaaS platformu (Cyftech). Backend tarafında REST API tasarımı, veri modelleme ve tenant izolasyonunu üstlendim; Linux sunucu kurulumu ve deployment sorumluluğu bende.</span>
+                    <span class="lang-en hidden">A multi-tenant SaaS platform for building/apartment management, co-founded with university friends (Cyftech). I own the backend: REST API design, data modeling, and tenant isolation, plus Linux server setup and deployment.</span>
+                </p>
+                <div class="tech-list">
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">Multi-tenant</span>
+                    <span class="tech-tag">Linux</span>
+                </div>
+            </div>
+
+            <div class="proj-card reveal">
+                <div class="proj-top">
+                    <span class="proj-status live">
+                        <span class="lang-tr">Canlı</span>
+                        <span class="lang-en hidden">Live</span>
+                    </span>
+                    <div class="proj-links">
+                        <a href="https://github.com/fatihkayaci/RestaurantBill" target="_blank" class="gh-btn">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                            GitHub
+                        </a>
+                        <a href="https://bill.fatihkayaci.com/" target="_blank" class="demo-btn">
+                            <span class="lang-tr">Canlı Demo</span><span class="lang-en hidden">Live Demo</span> ↗
+                        </a>
+                    </div>
+                </div>
+                <h3 class="proj-name">RestaurantBill — POS &amp; Kitchen Display System</h3>
+                <p class="proj-desc">
+                    <span class="lang-tr">Restoranlar için SignalR ile gerçek zamanlı veri senkronizasyonu sağlayan tam yığın POS ve mutfak yönetim sistemi. k6 load testleri ile 100 eşzamanlı kullanıcıda %0 hata oranı ve 3.7s p(95) yanıt süresi doğrulandı. Docker Compose + GitHub Actions CI/CD.</span>
+                    <span class="lang-en hidden">Full-stack POS and kitchen management system with real-time data sync via SignalR. Load tested with k6: 0% error rate and 3.7s p(95) response time under 100 concurrent users. Docker Compose + GitHub Actions CI/CD, JWT role-based auth.</span>
+                </p>
+                <div class="tech-list">
+                    <span class="tech-tag">.NET 9</span>
+                    <span class="tech-tag">Clean Arch</span>
+                    <span class="tech-tag">CQRS/MediatR</span>
+                    <span class="tech-tag">SignalR</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">React 19</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">xUnit</span>
+                    <span class="tech-tag">k6</span>
+                </div>
+            </div>
+
+            <div class="proj-card reveal">
+                <div class="proj-top">
+                    <span class="proj-status dev">
+                        <span class="lang-tr">Geliştirme aşamasında</span>
+                        <span class="lang-en hidden">In Development</span>
+                    </span>
+                    <div class="proj-links">
+                        <a href="https://github.com/fatihkayaci/eduvision-ai" target="_blank" class="gh-btn">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <h3 class="proj-name">EduVision — Okul Takip Platformu</h3>
+                <p class="proj-desc">
+                    <span class="lang-tr">Öğrenci, veli, öğretmen ve okul yöneticilerini tek çatı altında toplayan çoklu-okul (multi-tenant) okul takip sistemi. ASP.NET Core Web API'de Clean Architecture (Domain/Application/Infrastructure/API) ve MediatR + FluentValidation ile CQRS; JWT authentication, rol bazlı yetkilendirme ve okul bazlı veri izolasyonu. React + TypeScript + Vite frontend'de öğretmen, müdür ve öğrenci için ders programı, not girişi, yoklama, sınav/ödev oluşturma ve sınıf istatistikleri panelleri geliştiriliyor.</span>
+                    <span class="lang-en hidden">A multi-school (multi-tenant) student tracking platform bringing students, parents, teachers, and administrators together. ASP.NET Core Web API with Clean Architecture (Domain/Application/Infrastructure/API) and CQRS via MediatR + FluentValidation; JWT authentication, role-based authorization, and school-level data isolation. React + TypeScript + Vite frontend with role-specific dashboards for teachers, principals, and students — schedules, grade entry, attendance, exam/assignment creation, and class statistics.</span>
+                </p>
+                <div class="tech-list">
+                    <span class="tech-tag">.NET 10</span>
+                    <span class="tech-tag">Clean Arch</span>
+                    <span class="tech-tag">CQRS/MediatR</span>
+                    <span class="tech-tag">MSSQL</span>
+                    <span class="tech-tag">EF Core</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">FluentValidation</span>
+                    <span class="tech-tag">React 19</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Docker</span>
+                </div>
+            </div>
+
+            <div class="proj-card reveal">
+                <div class="proj-top">
+                    <span class="proj-status dev">
+                        <span class="lang-tr">Geliştirme aşamasında</span>
+                        <span class="lang-en hidden">In Development</span>
+                    </span>
+                    <div class="proj-links">
+                        <a href="https://github.com/fatihkayaci/learning-platform" target="_blank" class="gh-btn">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <h3 class="proj-name">Online Learning Platform</h3>
+                <p class="proj-desc">
+                    <span class="lang-tr">Dört bağımsız mikroservisten oluşan e-learning backend sistemi (Identity, Catalog, Enrollment, Notification). Database-per-service deseni; servisler arası iletişim REST ve RabbitMQ event'leri ile sağlanıyor. Redis destekli idempotent event işleme, Polly resilience politikaları.</span>
+                    <span class="lang-en hidden">An e-learning backend with four independent microservices (Identity, Catalog, Enrollment, Notification), each with its own PostgreSQL database. Services communicate via REST and RabbitMQ events. Redis-backed idempotent event processing and Polly resilience policies.</span>
+                </p>
+                <div class="tech-list">
+                    <span class="tech-tag">.NET 10</span>
+                    <span class="tech-tag">Microservices</span>
+                    <span class="tech-tag">Clean Arch</span>
+                    <span class="tech-tag">CQRS/MediatR</span>
+                    <span class="tech-tag">RabbitMQ</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Azure</span>
+                    <span class="tech-tag">YARP API Gateway</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ▸ SKILLS -->
+<section id="skills" class="section">
+    <div class="section-inner">
+        <div class="section-head reveal">
+            <div class="sec-label"><span class="lang-tr">Yetkinlikler</span><span class="lang-en hidden">Stack</span></div>
+            <h2 class="sec-title"><span class="lang-tr">Teknik Beceriler</span><span class="lang-en hidden">Technical Skills</span></h2>
+        </div>
+        <div class="skills-grid">
+            <div class="reveal">
+                <div class="skill-group-label"><span class="lang-tr">Diller &amp; Backend</span><span class="lang-en hidden">Languages &amp; Backend</span></div>
+                <ul class="skill-list">
+                    <li class="skill-chip">C#</li>
+                    <li class="skill-chip">.NET 9/10</li>
+                    <li class="skill-chip">ASP.NET Core</li>
+                    <li class="skill-chip">Entity Framework Core</li>
+                    <li class="skill-chip">LINQ</li>
+                    <li class="skill-chip">async/await</li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="skill-group-label"><span class="lang-tr">Temeller</span><span class="lang-en hidden">Fundamentals</span></div>
+                <ul class="skill-list">
+                    <li class="skill-chip">OOP</li>
+                    <li class="skill-chip">SOLID</li>
+                    <li class="skill-chip"><span class="lang-tr">Veri Yapıları &amp; Algoritmalar</span><span class="lang-en hidden">Data Structures &amp; Algorithms</span></li>
+                    <li class="skill-chip"><span class="lang-tr">Design Pattern'lar</span><span class="lang-en hidden">Design Patterns</span></li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="skill-group-label"><span class="lang-tr">Mimari</span><span class="lang-en hidden">Architecture</span></div>
+                <ul class="skill-list">
+                    <li class="skill-chip">Clean Architecture</li>
+                    <li class="skill-chip">CQRS / MediatR</li>
+                    <li class="skill-chip">Microservices</li>
+                    <li class="skill-chip">DDD</li>
+                    <li class="skill-chip">YARP API Gateway</li>
+                    <li class="skill-chip">Repository + UoW</li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="skill-group-label"><span class="lang-tr">Mesajlaşma</span><span class="lang-en hidden">Messaging</span></div>
+                <ul class="skill-list">
+                    <li class="skill-chip">RabbitMQ</li>
+                    <li class="skill-chip">SignalR</li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="skill-group-label"><span class="lang-tr">Cache &amp; Güvenilirlik</span><span class="lang-en hidden">Cache &amp; Resilience</span></div>
+                <ul class="skill-list">
+                    <li class="skill-chip">Redis</li>
+                    <li class="skill-chip">Polly (retry, circuit breaker)</li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="skill-group-label"><span class="lang-tr">Veritabanı</span><span class="lang-en hidden">Database</span></div>
+                <ul class="skill-list">
+                    <li class="skill-chip">PostgreSQL</li>
+                    <li class="skill-chip">MS SQL Server</li>
+                    <li class="skill-chip">EF Core Migrations</li>
+                    <li class="skill-chip">SQL optimization</li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="skill-group-label">DevOps &amp; Cloud</div>
+                <ul class="skill-list">
+                    <li class="skill-chip">Docker Compose</li>
+                    <li class="skill-chip">GitHub Actions</li>
+                    <li class="skill-chip">Azure Container Apps</li>
+                    <li class="skill-chip">Linux</li>
+                    <li class="skill-chip">Git</li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="skill-group-label"><span class="lang-tr">Test</span><span class="lang-en hidden">Testing</span></div>
+                <ul class="skill-list">
+                    <li class="skill-chip">xUnit</li>
+                    <li class="skill-chip">Moq</li>
+                    <li class="skill-chip">Testcontainers</li>
+                    <li class="skill-chip">k6</li>
+                    <li class="skill-chip">AAA pattern</li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="skill-group-label"><span class="lang-tr">AI Araçları</span><span class="lang-en hidden">AI Tools</span></div>
+                <ul class="skill-list">
+                    <li class="skill-chip">Claude</li>
+                    <li class="skill-chip">GitHub Copilot</li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="skill-group-label"><span class="lang-tr">Frontend &amp; İkincil</span><span class="lang-en hidden">Frontend &amp; Secondary</span></div>
+                <ul class="skill-list">
+                    <li class="skill-chip">React 19</li>
+                    <li class="skill-chip">TypeScript</li>
+                    <li class="skill-chip">Tailwind CSS</li>
+                    <li class="skill-chip">PHP</li>
+                    <li class="skill-chip">MySQL</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ EXPERIENCE -->
+<section id="experience" class="section section-alt">
+    <div class="section-inner-narrow">
+        <div class="section-head reveal">
+            <div class="sec-label"><span class="lang-tr">Deneyim</span><span class="lang-en hidden">Experience</span></div>
+            <h2 class="sec-title"><span class="lang-tr">İş Deneyimi</span><span class="lang-en hidden">Work Experience</span></h2>
+        </div>
+        <div class="timeline">
+            <div class="tl-line"></div>
+
+            <div class="tl-item reveal">
+                <div class="tl-dot"></div>
+                <div class="tl-head">
+                    <div>
+                        <div class="tl-company"><a href="https://cyftech.com.tr/" target="_blank" style="color:inherit;text-decoration:none;">Cyftech ↗</a></div>
+                        <div class="tl-role">Co-founder &amp; Backend Developer</div>
+                    </div>
+                    <div>
+                        <div class="tl-period mono"><span class="lang-tr">2023 – Devam</span><span class="lang-en hidden">2023 – Present</span></div>
+                        <div class="tl-location"><span class="lang-tr">İstanbul · PHP · MySQL · Linux</span><span class="lang-en hidden">Istanbul · PHP · MySQL · Linux</span></div>
+                    </div>
+                </div>
+                <p class="tl-subtitle" style="font-size:13px;color:var(--text-faintest);margin-top:6px;">
+                    <span class="lang-tr">Üniversite arkadaşlarımla yürüttüğümüz bina yönetimi SaaS yan projesi · 3 kişilik ekip</span>
+                    <span class="lang-en hidden">A building-management SaaS side project run with university friends · 3-person team</span>
+                </p>
+                <ul class="tl-bullets">
+                    <li>
+                        <span class="lang-tr">Multi-tenant SaaS'ın backend tarafı: REST API tasarımı, veri modelleme ve tenant izolasyonu.</span>
+                        <span class="lang-en hidden">Backend of a multi-tenant SaaS: REST API design, data modeling, and tenant isolation.</span>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">
-                            <span class="lang-tr">Hakkımda</span>
-                            <span class="lang-en hidden">About</span>
-                        </a>
+                    <li>
+                        <span class="lang-tr">Linux sunucu kurulumu, deployment ve CI/CD süreçlerinde uçtan uca sorumluluk.</span>
+                        <span class="lang-en hidden">Linux server setup, deployment, and CI/CD; full ownership of the product lifecycle.</span>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">
-                            <span class="lang-tr">Deneyim</span>
-                            <span class="lang-en hidden">Experience</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">
-                            <span class="lang-tr">Yetenekler</span>
-                            <span class="lang-en hidden">Skills</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">
-                            <span class="lang-tr">Projeler</span>
-                            <span class="lang-en hidden">Projects</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">
-                            <span class="lang-tr">İletişim</span>
-                            <span class="lang-en hidden">Contact</span>
-                        </a>
+                    <li>
+                        <span class="lang-tr">Küçük, hızlı iterasyon yapan bir ekipte tüm ürün döngüsünü deneyimledim: gereksinim → mimari → geliştirme → test → deployment.</span>
+                        <span class="lang-en hidden">Experienced the full product lifecycle in a small, fast-iterating team: requirements → architecture → development → testing → deployment.</span>
                     </li>
                 </ul>
-                <!-- Language Switcher -->
-                <div class="language-switcher">
-                    <button class="lang-btn" data-lang="en">EN</button>
-                    <button class="lang-btn active" data-lang="tr">TR</button>
+            </div>
+
+            <div class="tl-item reveal">
+                <div class="tl-dot"></div>
+                <div class="tl-head">
+                    <div>
+                        <div class="tl-company">IAS (Industrial Application Software)</div>
+                        <div class="tl-role"><span class="lang-tr">Stajyer Yazılım Geliştirici</span><span class="lang-en hidden">Software Developer Intern</span></div>
+                    </div>
+                    <div>
+                        <div class="tl-period mono"><span class="lang-tr">Kas – Ara 2023</span><span class="lang-en hidden">Nov – Dec 2023</span></div>
+                        <div class="tl-location"><span class="lang-tr">İstanbul · ERP ekibi</span><span class="lang-en hidden">Istanbul · Enterprise ERP team</span></div>
+                    </div>
                 </div>
+                <ul class="tl-bullets">
+                    <li>
+                        <span class="lang-tr">SOLID prensiplerine uygun, code review süreçleri olan ekipte kurumsal ERP modülü geliştirme.</span>
+                        <span class="lang-en hidden">Enterprise ERP module development in a structured team with SOLID principles and code reviews.</span>
+                    </li>
+                    <li>
+                        <span class="lang-tr">Yüksek hacimli veri setleri için raporlama SQL sorgularını optimize etti.</span>
+                        <span class="lang-en hidden">Optimized reporting SQL queries for high-volume datasets.</span>
+                    </li>
+                </ul>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="floating-element">
-            <i class="fas fa-code" style="font-size: 8rem;"></i>
+<!-- ▸ EDUCATION -->
+<section id="education" class="section">
+    <div class="section-inner-narrow">
+        <div class="section-head reveal">
+            <div class="sec-label"><span class="lang-tr">Eğitim</span><span class="lang-en hidden">Education</span></div>
+            <h2 class="sec-title"><span class="lang-tr">Eğitim</span><span class="lang-en hidden">Education</span></h2>
         </div>
-        <div class="floating-element">
-            <i class="fas fa-layer-group" style="font-size: 6rem;"></i> </div>
-        <div class="floating-element">
-            <i class="fas fa-database" style="font-size: 7rem;"></i>
-        </div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Fatih Kayacı</h1>
-                <p class="hero-subtitle">
-                    <span class="lang-tr">.NET Backend Developer | Clean Architecture | SaaS & Gerçek Zamanlı Sistemler</span>
-                    <span class="lang-en hidden">.NET Backend Developer | Clean Architecture | SaaS & Real-Time Systems</span>
-                </p>
-                <p class="hero-description">
-                    <span class="lang-tr">
-                        2024 mezunu, yüksek lisansa devam eden junior backend developer. Üniversite arkadaşlarıyla bina yönetimi SaaS yan projesi kurdum; .NET ekosistemiyle Clean Architecture, CQRS ve mikroservis mimarisine odaklı açık kaynak projeler geliştiriyorum.
-                    </span>
-                    <span class="lang-en hidden">
-                        Junior backend developer, 2024 graduate currently pursuing M.Sc. Co-founded a SaaS building management side project with university friends. Building open-source projects focused on Clean Architecture, CQRS, and microservice architecture in the .NET ecosystem.
-                    </span>
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-gradient">
-                        <i class="fas fa-rocket"></i> 
-                        <span class="lang-tr">Projelerimi Gör</span>
-                        <span class="lang-en hidden">View Projects</span>
-                    </a>
-                    <a href="#contact" class="btn btn-outline-gradient">
-                        <i class="fas fa-envelope"></i>
-                        <span class="lang-tr">İletişim</span>
-                        <span class="lang-en hidden">Contact</span>
-                    </a>
-                    <a href="Fatih_Kayaci_CV_BackendDeveloper_Junior.pdf" download class="btn btn-outline-gradient">
-                        <i class="fas fa-download"></i>
-                        <span class="lang-tr">CV İndir</span>
-                        <span class="lang-en hidden">Download CV</span>
-                    </a>
-                </div>
+        <div class="timeline">
+            <div class="tl-line"></div>
+
+            <div class="tl-item edu-item reveal">
+                <div class="tl-dot dim"></div>
+                <div class="tl-school">Sivas Cumhuriyet Üniversitesi</div>
+                <div class="tl-degree"><span class="lang-tr">Bilgisayar Mühendisliği — Yüksek Lisans</span><span class="lang-en hidden">Computer Engineering — Master's Degree</span></div>
+                <div class="tl-period mono"><span class="lang-tr">Eyl 2025 – devam</span><span class="lang-en hidden">Sep 2025 – present</span></div>
+            </div>
+
+            <div class="tl-item edu-item reveal">
+                <div class="tl-dot dim"></div>
+                <div class="tl-school">Sivas Cumhuriyet Üniversitesi</div>
+                <div class="tl-degree"><span class="lang-tr">Bilgisayar Mühendisliği — Lisans</span><span class="lang-en hidden">Computer Engineering — Bachelor's Degree</span></div>
+                <div class="tl-period mono">2020 – 2024</div>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="lang-tr">Hakkımda</span>
-                <span class="lang-en hidden">About Me</span>
-            </h2>
-            <div class="row">
-                <div class="col-lg-4 mb-4 d-flex">
-                    <div class="about-card">
-                        <div class="about-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h4>
-                            <span class="lang-tr">Eğitim</span>
-                            <span class="lang-en hidden">Education</span>
-                        </h4>
-                        <p>
-                            <span class="lang-tr"><strong>Sivas Cumhuriyet Üniversitesi</strong><br>Yüksek Lisans, Bilgisayar Mühendisliği — Eyl 2025 – Devam<br>Lisans, Bilgisayar Mühendisliği — 2024 mezunu<br><br>Yazılım mühendisliği, algoritma analizi ve sistem tasarımı alanlarında kapsamlı eğitim.</span>
-                            <span class="lang-en hidden"><strong>Sivas Cumhuriyet University</strong><br>M.Sc. Computer Engineering — Sep 2025 – Present<br>B.Sc. Computer Engineering — Graduated 2024<br><br>Comprehensive education in software engineering, algorithm analysis, and system design.</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4 d-flex">
-                    <div class="about-card">
-                        <div class="about-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h4>
-                            <span class="lang-tr">Deneyim</span>
-                            <span class="lang-en hidden">Experience</span>
-                        </h4>
-                        <p>
-                            <span class="lang-tr">Cyftech'in (Katsis) kurucu ekibindeyim. 3 kişilik ekipte bina yönetimi SaaS yan projesinin backend tarafını üstlendim: REST API tasarımı, veri modelleme, kiracı izolasyonu ve Linux sunucu altyapısı. PHP, MySQL ve CI/CD süreçlerinde uçtan uca deneyim kazandım.</span>
-                            <span class="lang-en hidden">Part of the founding team at Cyftech (Katsis). Leading backend of a 3-person SaaS building management side project: REST API design, data modeling, tenant isolation, and Linux server infrastructure. End-to-end experience with PHP, MySQL, and CI/CD pipelines.</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4 d-flex">
-                    <div class="about-card">
-                        <div class="about-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h4>
-                            <span class="lang-tr">Misyon</span>
-                            <span class="lang-en hidden">Mission</span>
-                        </h4>
-                        <p>
-                            <span class="lang-tr">Ticari bir SaaS ürünü kurup production'a taşıma deneyimini .NET ekosistemiyle birleştiriyorum. Hedefim; Clean Architecture, CQRS ve dağıtık sistemler konusundaki birikimimi profesyonel bir .NET backend ekibinde derinleştirmek.</span>
-                            <span class="lang-en hidden">I combine real-world SaaS product experience with deep focus on the .NET ecosystem. My goal is to grow within a professional .NET backend team, deepening my expertise in Clean Architecture, CQRS, and distributed systems.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="lang-tr">İş Deneyimi</span>
-                <span class="lang-en hidden">Work Experience</span>
-            </h2>
-            <div class="row justify-content-center">
-                
-                <div class="col-lg-8 mb-4">
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div class="company-logo">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <div class="experience-info">
-                                <h4>
-                                    <span class="lang-tr">Kurucu Ortak & Backend Developer</span>
-                                    <span class="lang-en hidden">Co-founder & Backend Developer</span>
-                                </h4>
-                                <h5>Cyftech — <a href="https://katsis.com.tr" target="_blank" style="color: var(--primary-color);">katsis.com.tr</a></h5>
-                                <p class="experience-date">
-                                    <span class="lang-tr">2023 – Devam | İstanbul</span>
-                                    <span class="lang-en hidden">2023 – Present | Istanbul</span>
-                                </p>
-                                <span class="badge bg-primary mt-1">
-                                    <i class="fas fa-star me-1"></i>
-                                    <span class="lang-tr">Mevcut Pozisyon</span>
-                                    <span class="lang-en hidden">Current Position</span>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="experience-details">
-                            <ul>
-                                <li>
-                                    <span class="lang-tr">Multi-tenant SaaS mimarisinin backend tarafını üstlendim — REST API tasarımı, veri modelleme ve kiracı (tenant) izolasyonu üzerine çalıştım.</span>
-                                    <span class="lang-en hidden">Led the backend of a multi-tenant SaaS architecture — REST API design, data modeling, and tenant isolation.</span>
-                                </li>
-                                <li>
-                                    <span class="lang-tr">Linux sunucu kurulumu, deployment ve temel CI/CD süreçlerinde uçtan uca sorumluluk aldım.</span>
-                                    <span class="lang-en hidden">Took end-to-end responsibility for Linux server setup, deployment, and basic CI/CD pipelines.</span>
-                                </li>
-                                <li>
-                                    <span class="lang-tr">Küçük takımda hızlı iterasyonla tüm ürün döngüsünü deneyimledim: gereksinim → mimari → geliştirme → test → deployment.</span>
-                                    <span class="lang-en hidden">Experienced the full product cycle through rapid iteration in a small team: requirement → architecture → development → test → deployment.</span>
-                                </li>
-                                <li>
-                                    <span class="lang-tr"><strong>Tech Stack:</strong> PHP, MySQL, Linux, CI/CD</span>
-                                    <span class="lang-en hidden"><strong>Tech Stack:</strong> PHP, MySQL, Linux, CI/CD</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-8">
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div class="company-logo">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <div class="experience-info">
-                                <h4>
-                                    <span class="lang-tr">Stajyer Yazılım Geliştirici</span>
-                                    <span class="lang-en hidden">Software Developer Intern</span>
-                                </h4>
-                                <h5>IAS (Industrial Application Software)</h5>
-                                <p class="experience-date">11/2023 – 12/2023 | İstanbul</p>
-                            </div>
-                        </div>
-                        <div class="experience-details">
-                            <ul>
-                                <li>
-                                    <span class="lang-tr">Kurumsal ERP sistemlerinin geliştirme süreçlerinde aktif rol aldım.</span>
-                                    <span class="lang-en hidden">Took an active role in the development processes of corporate ERP systems.</span>
-                                </li>
-                                <li>
-                                    <span class="lang-tr">SQL tabanlı veritabanı sorgularının optimizasyonu ve veri modelleme çalışmalarına katıldım.</span>
-                                    <span class="lang-en hidden">Participated in the optimization of SQL-based database queries and data modeling.</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="lang-tr">Teknik Yetenekler</span>
-                <span class="lang-en hidden">Technical Skills</span>
-            </h2>
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-microsoft"></i>
-                        </div>
-                        <h5>C# / .NET</h5>
-                        <p>ASP.NET Core 9, Web API, Entity Framework Core</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h5>
-                            <span class="lang-tr">Mesajlaşma & Gerçek Zamanlı</span>
-                            <span class="lang-en hidden">Messaging & Real-Time</span>
-                        </h5>
-                        <p>RabbitMQ (durable queues, manual ack), MassTransit, SignalR</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-vial"></i>
-                        </div>
-                        <h5>Testing</h5>
-                        <p>xUnit, Moq, AAA pattern, isolated unit testing</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h5>
-                            <span class="lang-tr">Veritabanları</span>
-                            <span class="lang-en hidden">Databases</span>
-                        </h5>
-                        <p>MySQL, SQL Server, PostgreSQL</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-react"></i>
-                        </div>
-                        <h5>Frontend</h5>
-                        <p>React 19, TypeScript, Tailwind CSS, Vite</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-git-alt"></i>
-                        </div>
-                        <h5>
-                            <span class="lang-tr">Versiyon Kontrolü</span>
-                            <span class="lang-en hidden">Version Control</span>
-                        </h5>
-                        <p>
-                            <span class="lang-tr">Git, GitHub, İş Birliği</span>
-                            <span class="lang-en hidden">Git, GitHub, Collaboration</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h5>
-                            <span class="lang-tr">Mimari</span>
-                            <span class="lang-en hidden">Architecture</span>
-                        </h5>
-                        <p>Clean Architecture, CQRS, Microservices, YARP API Gateway, Repository Pattern, Unit of Work, SOLID, DDD</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h5>DevOps</h5>
-                        <p>Docker Compose, GitHub Actions CI/CD, Linux server administration, Azure Container Apps</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h5>
-                            <span class="lang-tr">Güvenlik & Kimlik Doğrulama</span>
-                            <span class="lang-en hidden">Security & Auth</span>
-                        </h5>
-                        <p>JWT, ASP.NET Core Identity, Role-Based Authorization</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-language"></i>
-                        </div>
-                        <h5>
-                            <span class="lang-tr">Diller</span>
-                            <span class="lang-en hidden">Languages</span>
-                        </h5>
-                        <p>
-                            <span class="lang-tr">Türkçe (Ana Dil), İngilizce (B2)</span>
-                            <span class="lang-en hidden">Turkish (Native), English (B2)</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="lang-tr">Öne Çıkan Projeler</span>
-                <span class="lang-en hidden">Featured Projects</span>
-            </h2>
-            <div class="row">
-                
-                <div class="col-lg-6 mb-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="project-content">
-                            <h4 class="project-title">
-                                <span class="lang-tr">Online Learning Platform — Mikroservis E-Öğrenme Sistemi</span>
-                                <span class="lang-en hidden">Online Learning Platform — Microservices E-Learning System</span>
-                            </h4>
-                            <p class="project-description">
-                                <span class="lang-tr">
-                                    Mikroservis mimarisiyle geliştirilen e-learning platformu — Identity, Catalog, Enrollment, Notification servislerine bölünmüş, her biri kendi PostgreSQL veritabanına sahip (database-per-service). Senkron işlemler için REST, asenkron event'ler için RabbitMQ + MassTransit kullanılıyor. JWT tabanlı cross-service authentication ve YARP API Gateway planlanıyor. Her servis Clean Architecture ve CQRS ile yapılandırıldı. Azure Container Apps'e deployment hedefleniyor.
-                                </span>
-                                <span class="lang-en hidden">
-                                    E-learning platform built with microservices — split into independent services (Identity, Catalog, Enrollment, Notification), each with its own PostgreSQL database (database-per-service). REST for synchronous operations, RabbitMQ + MassTransit for async events. JWT-based cross-service authentication and YARP API Gateway planned. Each service structured with Clean Architecture and CQRS. Targeting Azure Container Apps deployment.
-                                </span>
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">C# / .NET 10</span>
-                                <span class="tech-tag">Microservices</span>
-                                <span class="tech-tag">Clean Architecture</span>
-                                <span class="tech-tag">CQRS (MediatR)</span>
-                                <span class="tech-tag">RabbitMQ</span>
-                                <span class="tech-tag">MassTransit</span>
-                                <span class="tech-tag">YARP Gateway</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">JWT</span>
-                                <span class="tech-tag">Docker</span>
-                                <span class="tech-tag">Azure</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/fatihkayaci/learning-platform" target="_blank" class="btn btn-outline-gradient me-2">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                                <span class="badge bg-warning text-dark">
-                                    <i class="fas fa-code me-1"></i>
-                                    <span class="lang-tr">Geliştirme Aşamasında</span>
-                                    <span class="lang-en hidden">In Development</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-                        <div class="project-content">
-                            <h4 class="project-title">
-                                <span class="lang-tr">Restoran POS & Mutfak Ekran Sistemi</span>
-                                <span class="lang-en hidden">Restaurant POS & Kitchen Display System</span>
-                            </h4>
-                            <p class="project-description">
-                                <span class="lang-tr">
-                                    Clean Architecture ve CQRS (MediatR) prensipleriyle geliştirilmiş uçtan uca restoran POS sistemi. Domain katmanı framework bağımlılığı olmadan, veritabanı veya HTTP'ye ihtiyaç duymadan test edilebilir mimaride. Mutfak bildirimleri SignalR ile geliştirildi — Mutfak Ekranı yenilemeden anlık olarak verileri çekiyor. JWT rol tabanlı yetkilendirme (Admin, Garson, Mutfak, Kasiyer). xUnit + Moq ile 30+ izole unit test.
-                                </span>
-                                <span class="lang-en hidden">
-                                    Full-stack POS system built with Clean Architecture and CQRS (MediatR) — Domain layer testable without framework dependencies, database, or HTTP. Kitchen notifications via SignalR — Kitchen Display receives live updates without page refresh. JWT role-based authorization (Admin, Waiter, Kitchen, Cashier). 30+ isolated unit tests with xUnit + Moq.
-                                </span>
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">C# / .NET 9</span>
-                                <span class="tech-tag">Clean Architecture</span>
-                                <span class="tech-tag">CQRS (MediatR)</span>
-                                <span class="tech-tag">RabbitMQ</span>
-                                <span class="tech-tag">SignalR</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">JWT</span>
-                                <span class="tech-tag">React 19</span>
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Docker</span>
-                                <span class="tech-tag">xUnit</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/fatihkayaci/RestaurantBill" target="_blank" class="btn btn-outline-gradient me-2">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                                <a href="https://bill.fatihkayaci.com/" target="_blank" class="btn btn-gradient me-2">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <span class="badge bg-primary">
-                                    <i class="fas fa-star me-2"></i>
-                                    <span class="lang-tr">Ana Proje</span>
-                                    <span class="lang-en hidden">Main Project</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="project-content">
-                            <h4 class="project-title">
-                                <span class="lang-tr">Katsis — SaaS Bina Yönetim Platformu</span>
-                                <span class="lang-en hidden">Katsis — SaaS Building Management Platform</span>
-                            </h4>
-                            <p class="project-description">
-                                <span class="lang-tr">
-                                    3 kişilik ekiple yürütülen bina yönetimi SaaS yan projesi. Multi-tenant mimarinin backend tarafını üstlendim: REST API tasarımı, veri modelleme ve kiracı izolasyonu. Linux sunucu kurulumu, deployment ve temel CI/CD süreçlerinde uçtan uca sorumluluk aldım; tüm ürün döngüsünü hızlı iterasyonla deneyimledim.
-                                </span>
-                                <span class="lang-en hidden">
-                                    Building management SaaS side project run by a 3-person team. Led the backend of a multi-tenant architecture: REST API design, data modeling, and tenant isolation. Took end-to-end responsibility for Linux server setup, deployment, and CI/CD pipelines; experienced the full product lifecycle through rapid iteration.
-                                </span>
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">Redis</span>
-                                <span class="tech-tag">RabbitMQ</span>
-                                <span class="tech-tag">WebSocket</span>
-                                <span class="tech-tag">Linux</span>
-                                <span class="tech-tag">CI/CD</span>
-                                <span class="tech-tag">Multi-tenant SaaS</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://katsis.com.tr" target="_blank" class="btn btn-gradient me-2">
-                                    <i class="fas fa-external-link-alt"></i> katsis.com.tr
-                                </a>
-                                <span class="badge bg-success">
-                                    <i class="fas fa-check-circle me-1"></i>
-                                    <span class="lang-tr">Ticari Ürün</span>
-                                    <span class="lang-en hidden">Commercial Product</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="lang-tr">İletişime Geçin</span>
-                <span class="lang-en hidden">Get In Touch</span>
-            </h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-card">
-                        <h4>
-                            <span class="lang-tr">Birlikte Harika Şeyler Yapalım!</span>
-                            <span class="lang-en hidden">Let's Create Something Amazing Together!</span>
-                        </h4>
-                        <p>
-                            <span class="lang-tr">Yeni projeler ve iş fırsatları hakkında konuşmak için her zaman hazırım.</span>
-                            <span class="lang-en hidden">Always ready to discuss new projects and business opportunities.</span>
-                        </p>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@fatihkayaci.com</span>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+90 542 484 61 47</span>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>İstanbul, Turkey</span>
-                        </div>
-                        
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/fatih-kayaci-79180a28a/" class="social-link" target="_blank">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/fatihkayaci" class="social-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
+        <div class="edu-note reveal">
             <p>
-                &copy; 2025 Fatih Kayacı. 
-                <span class="lang-tr">❤️ ve ☕ ile hazırlandı</span>
-                <span class="lang-en hidden">Crafted with ❤️ and lots of ☕</span>
+                <span class="lang-tr">Askerlik yüksek lisans nedeniyle 2029'a kadar tehirli. Türkiye genelinde çalışmaya ve relocation'a açık. Türkçe (anadil) · İngilizce (B2)</span>
+                <span class="lang-en hidden">Military service deferred until 2029 (master's degree). Available to work across Turkey, open to relocation. Turkish (native) · English (B2)</span>
             </p>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Language switching functionality
-        const langButtons = document.querySelectorAll('.lang-btn');
-        const trElements = document.querySelectorAll('.lang-tr');
-        const enElements = document.querySelectorAll('.lang-en');
-        
-        // Get saved language from localStorage or default to Turkish
-        let currentLang = localStorage.getItem('selectedLanguage') || 'en';
-        
-        // Initialize language on page load
-        function initLanguage() {
-            if (currentLang === 'en') {
-                switchToEnglish();
-            } else {
-                switchToTurkish();
-            }
+<!-- ▸ BLOG -->
+<section id="blog" class="section section-alt">
+    <div class="section-inner">
+        <div class="section-head reveal">
+            <div class="sec-label">Blog</div>
+            <h2 class="sec-title">Blog</h2>
+        </div>
+        <div class="blog-placeholder reveal">
+            <div class="braces">{ }</div>
+            <h3><span class="lang-tr">Yakında</span><span class="lang-en hidden">Coming Soon</span></h3>
+            <p>
+                <span class="lang-tr">Mimari kararlar, .NET ipuçları ve backend geliştirme üzerine yazılar hazırlıyorum.</span>
+                <span class="lang-en hidden">Preparing articles on architectural decisions, .NET tips, and backend development.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ CONTACT -->
+<section id="contact" class="section">
+    <div class="section-inner" style="max-width:1000px;">
+        <div class="section-head reveal">
+            <div class="sec-label"><span class="lang-tr">İletişim</span><span class="lang-en hidden">Contact</span></div>
+            <h2 class="sec-title"><span class="lang-tr">Bir şeyler inşa edelim.</span><span class="lang-en hidden">Let's build something.</span></h2>
+        </div>
+        <div class="contact-grid">
+            <div class="reveal">
+                <form class="contact-form" id="contactForm">
+                    <input class="c-input" required type="text" id="cName">
+                    <input class="c-input" required type="email" id="cEmail">
+                    <textarea class="c-input" required rows="5" id="cMsg"></textarea>
+                    <button class="sub-btn" type="submit">
+                        <span class="lang-tr">Gönder</span><span class="lang-en hidden">Send</span>
+                    </button>
+                </form>
+                <div class="contact-sent hidden" id="contactSent">
+                    <div class="check">✓</div>
+                    <div class="msg"><span class="lang-tr">Mesajınız alındı!</span><span class="lang-en hidden">Message received!</span></div>
+                </div>
+            </div>
+            <div class="reveal d2">
+                <p class="contact-desc">
+                    <span class="lang-tr">Yeni fırsatlara, açık kaynak işbirliklerine ve ilginç projelere açığım. Mesajınızı bırakın.</span>
+                    <span class="lang-en hidden">Open to new opportunities, open-source collaborations, and interesting projects. Leave a message.</span>
+                </p>
+                <div class="reach-label"><span class="lang-tr">Ya da doğrudan ulaşın:</span><span class="lang-en hidden">Or reach out directly:</span></div>
+                <div class="reach-list">
+                    <a href="mailto:info@fatihkayaci.com" class="soc-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        info@fatihkayaci.com
+                    </a>
+                    <a href="tel:+905424846147" class="soc-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        +90 542 484 61 47
+                    </a>
+                    <a href="https://www.linkedin.com/in/fatihkayaci" target="_blank" class="soc-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                        linkedin.com/in/fatihkayaci
+                    </a>
+                    <a href="https://github.com/fatihkayaci" target="_blank" class="soc-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                        github.com/fatihkayaci
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ▸ FOOTER -->
+<footer class="site-footer">
+    <span>© 2025 Fatih Kayacı · fatihkayaci.com</span>
+</footer>
+
+<script>
+    const trEls = document.querySelectorAll('.lang-tr');
+    const enEls = document.querySelectorAll('.lang-en');
+    const langBtn = document.getElementById('langBtn');
+    const cvDownloadBtn = document.getElementById('cvDownloadBtn');
+    let currentLang = localStorage.getItem('selectedLanguage') || 'tr';
+
+    function applyLang(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        if (lang === 'en') {
+            trEls.forEach(el => el.classList.add('hidden'));
+            enEls.forEach(el => el.classList.remove('hidden'));
+            langBtn.textContent = 'TR';
+            cvDownloadBtn.href = 'Fatih_Kayaci_CV_Backend_Developer_EN.pdf';
+        } else {
+            trEls.forEach(el => el.classList.remove('hidden'));
+            enEls.forEach(el => el.classList.add('hidden'));
+            langBtn.textContent = 'EN';
+            cvDownloadBtn.href = 'Fatih_Kayaci_CV_Backend_Developer_TR.pdf';
         }
-        
-        function switchToTurkish() {
-            currentLang = 'tr';
-            document.documentElement.lang = 'tr';
-            
-            // Update button states
-            langButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.lang === 'tr') {
-                    btn.classList.add('active');
-                }
-            });
-            
-            // Show Turkish, hide English
-            trElements.forEach(el => el.classList.remove('hidden'));
-            enElements.forEach(el => el.classList.add('hidden'));
-            
-            // Save preference
-            localStorage.setItem('selectedLanguage', 'tr');
-        }
-        
-        function switchToEnglish() {
-            currentLang = 'en';
-            document.documentElement.lang = 'en';
-            
-            // Update button states
-            langButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.lang === 'en') {
-                    btn.classList.add('active');
-                }
-            });
-            
-            // Show English, hide Turkish
-            enElements.forEach(el => el.classList.remove('hidden'));
-            trElements.forEach(el => el.classList.add('hidden'));
-            
-            // Save preference
-            localStorage.setItem('selectedLanguage', 'en');
-        }
-        
-        // Event listeners for language buttons
-        langButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                if (button.dataset.lang === 'tr') {
-                    switchToTurkish();
-                } else {
-                    switchToEnglish();
-                }
-            });
+        localStorage.setItem('selectedLanguage', lang);
+    }
+
+    langBtn.addEventListener('click', () => applyLang(currentLang === 'tr' ? 'en' : 'tr'));
+    applyLang(currentLang);
+
+    // Placeholders for contact inputs need to switch with language too
+    const namePh = { tr: 'Adınız', en: 'Your name' };
+    const emailPh = { tr: 'E-posta adresiniz', en: 'Your email' };
+    const msgPh = { tr: 'Mesajınız...', en: 'Your message...' };
+    function updatePlaceholders() {
+        document.getElementById('cName').placeholder = namePh[currentLang];
+        document.getElementById('cEmail').placeholder = emailPh[currentLang];
+        document.getElementById('cMsg').placeholder = msgPh[currentLang];
+    }
+    langBtn.addEventListener('click', updatePlaceholders);
+    updatePlaceholders();
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
-        
-        // Initialize language when page loads
-        initLanguage();
+    });
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    // Navbar background on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
 
-        // Scroll indicator
-        function updateScrollIndicator() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.getElementById('scrollIndicator').style.width = scrollPercent + '%';
-        }
-
-        window.addEventListener('scroll', updateScrollIndicator);
-
-        // Navbar background change
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(26, 26, 46, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(26, 26, 46, 0.95)';
+    // Reveal on scroll
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                io.unobserve(entry.target);
             }
         });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and sections
-        document.querySelectorAll('.about-card, .skill-card, .project-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Typing effect for hero subtitle
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Start typing effect when page loads
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const subtitle = document.querySelector('.hero-subtitle');
-                if (subtitle) {
-                    // Get the visible subtitle text based on current language
-                    const visibleSpan = subtitle.querySelector(currentLang === 'tr' ? '.lang-tr' : '.lang-en');
-                    if (visibleSpan && !visibleSpan.classList.contains('hidden')) {
-                        const originalText = visibleSpan.textContent;
-                        typeWriter(visibleSpan, originalText, 150);
-                    }
-                }
-            }, 1000);
-        });
-
-        // Parallax effect for floating elements
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.floating-element');
-            
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-
-        // Add glitch effect to title on hover
-        const heroTitle = document.querySelector('.hero-title');
-        if (heroTitle) {
-            heroTitle.addEventListener('mouseenter', function() {
-                this.style.animation = 'glitch 0.5s ease-in-out';
-            });
-
-            heroTitle.addEventListener('animationend', function() {
-                this.style.animation = 'slideInUp 1s ease-out';
-            });
-        }
-
-        // Add glitch keyframes to CSS
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes glitch {
-                0% { transform: translateX(0); }
-                10% { transform: translateX(-2px); }
-                20% { transform: translateX(2px); }
-                30% { transform: translateX(-2px); }
-                40% { transform: translateX(2px); }
-                50% { transform: translateX(-2px); }
-                60% { transform: translateX(2px); }
-                70% { transform: translateX(-2px); }
-                80% { transform: translateX(2px); }
-                90% { transform: translateX(-2px); }
-                100% { transform: translateX(0); }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Cursor trail effect
-        const cursor = document.createElement('div');
-        cursor.style.cssText = `
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, var(--primary-color), transparent);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.1s ease;
-            opacity: 0.7;
-        `;
-        document.body.appendChild(cursor);
-
-        document.addEventListener('mousemove', function(e) {
-            cursor.style.left = e.clientX - 10 + 'px';
-            cursor.style.top = e.clientY - 10 + 'px';
-        });
-
-        // Hide cursor on mouse leave
-        document.addEventListener('mouseleave', function() {
-            cursor.style.opacity = '0';
-        });
-
-        document.addEventListener('mouseenter', function() {
-            cursor.style.opacity = '0.7';
-        });
-
-        // Add click ripple effect
-        function createRipple(event) {
-            const button = event.currentTarget;
-            const circle = document.createElement('span');
-            const diameter = Math.max(button.clientWidth, button.clientHeight);
-            const radius = diameter / 2;
-            
-            circle.style.width = circle.style.height = diameter + 'px';
-            circle.style.left = event.clientX - button.offsetLeft - radius + 'px';
-            circle.style.top = event.clientY - button.offsetTop - radius + 'px';
-            circle.classList.add('ripple');
-            
-            const ripple = button.getElementsByClassName('ripple')[0];
-            if (ripple) {
-                ripple.remove();
-            }
-            
-            button.appendChild(circle);
-        }
-
-        // Add ripple effect to buttons
-        document.querySelectorAll('.btn-gradient, .btn-outline-gradient').forEach(button => {
-            button.addEventListener('click', createRipple);
-        });
-
-        // Add ripple CSS
-        const rippleStyle = document.createElement('style');
-        rippleStyle.textContent = `
-            .ripple {
-                position: absolute;
-                border-radius: 50%;
-                transform: scale(0);
-                animation: ripple-animation 0.6s linear;
-                background-color: rgba(255, 255, 255, 0.5);
-            }
-            
-            @keyframes ripple-animation {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(rippleStyle);
-    </script>
+    // Fake contact form submit (no backend on this static site)
+    const contactForm = document.getElementById('contactForm');
+    const contactSent = document.getElementById('contactSent');
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        contactForm.classList.add('hidden');
+        contactSent.classList.remove('hidden');
+    });
+</script>
 </body>
 </html>
