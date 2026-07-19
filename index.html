@@ -410,7 +410,7 @@
             <div class="tl-line"></div>
 
             <div class="tl-item reveal">
-                <div class="tl-dot"></div>
+                <div class="tl-dot"></div>  
                 <div class="tl-head">
                     <div>
                         <div class="tl-company"><a href="https://cyftech.com.tr/" target="_blank" style="color:inherit;text-decoration:none;">Cyftech ↗</a></div>
@@ -532,6 +532,10 @@
                     <input class="c-input" required type="text" id="cName">
                     <input class="c-input" required type="email" id="cEmail">
                     <textarea class="c-input" required rows="5" id="cMsg"></textarea>
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="cWebsite">Website</label>
+                        <input type="text" id="cWebsite" name="website" tabindex="-1" autocomplete="off">
+                    </div>
                     <button class="sub-btn" type="submit">
                         <span class="lang-tr">Gönder</span><span class="lang-en hidden">Send</span>
                     </button>
@@ -651,6 +655,10 @@
     const contactSent = document.getElementById('contactSent');
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
+        // Honeypot: bots fill hidden fields, real users can't see or reach this one
+        if (document.getElementById('cWebsite').value !== '') {
+            return;
+        }
         contactForm.classList.add('hidden');
         contactSent.classList.remove('hidden');
     });

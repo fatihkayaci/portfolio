@@ -198,6 +198,10 @@ ul { margin: 0; padding: 0; }
 }
 .c-input:focus { outline: none; border-color: var(--accent); }
 .contact-form { display: flex; flex-direction: column; gap: 14px; }
+.hp-field {
+    position: absolute; left: -9999px; top: -9999px;
+    width: 1px; height: 1px; overflow: hidden;
+}
 .sub-btn {
     background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 14px 28px;
     font-size: 14px; font-weight: 600; opacity: 1; text-align: left; cursor: pointer; transition: opacity 0.2s;
